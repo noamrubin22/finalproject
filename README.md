@@ -1,37 +1,61 @@
 # Music visualization 
-Final project of the programming minor -
+Final project of the programming minor - music will be used as data and by using d3 it will be visualized.
 Noam Rubin 10800565 - June 2018
 
-## Problem and solution
-This visualization is perfect for music lovers that either don’t have the knowledge of how to use a DJ-set or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. 
-This data visualization will approach this problem by giving the users the freedom to add beats and change sounds. The shape visualization will be the finishing touch: after manipulating the song the visualization can be projected on parties!  
+## Problem statement
+This visualization will be an addition for music lovers that either don’t have the knowledge of how to use a synthesizer or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. Complementing knowledge about how songs are being constructed would help the process of creating a new song.
 
-## Prerequisites
-  * **Frequency barchart**: The Web Audio API with HTML5 gives access to control, modify and interpret audio within the browser. In this way the frequency can be stored in an array. Chart can be updated as frequency changes.
-  https://www.bignerdranch.com/blog/music-visualization-with-d3-js/  
-  https://www.html5rocks.com/en/tutorials/webaudio/intro/ 
+## Solution
+This data visualization will approach this problem by giving the users the freedom to manipulate sounds and visualize the deconstruction of songs.
 
-  * **Shape visualization**: using ‘requestAnimationFrame’ to update the array as the music changes.
-  https://preziotte.com/blog/partymode/ 
-  http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
-
-  *	**Music manipulator**: this looks a bit more complicated. Again by using the Web Audio API it will be possible to add an oscillator, change the gain (volume) and frequency.
- https://roadtolarissa.com/synth/ 
- http://thesynth.herokuapp.com/#!/
-
-## A sketch of the visualization
 ![](https://github.com/noamrubin22/finalproject/blob/master/doc/sketch.jpg) 
 
-## Other implementations and difficulties
-Other implementations would be the ability to change the color-theme of the visualization or the shapes. I would expect difficulties by linking all 3 visualizations to each other. Besides, the option to add and manipulate sounds will be a challenge. 
+#### Main features
+**Minimum viable product implementations**
 
-## To do
-- [ ] get approval proposal
-- [ ] understand Web Audio API
-- [ ] create frequency bar chart
-- [ ] create shape visualization
-- [ ] create music manipulator
-- [ ] implement update ability for color 
-- [ ] implement update ability for shapes
-- [ ] link visualizations
+ *Visualizations*
+  1. **frequency barchart**: this barchart will update itself based on the frequency of the song
+  2. **shape update visualization**: shapes will transform into others based on the wavelength of the song
+  3. **music manipulation tool**: this tool will provide the option to manipulate songs by changing the frequency or volume and adding a delay or a filter (low/high- pass)
+
+ *Interactive features*
+  1. change of data by addition soundcloud song 
+  2. change 'visualization-theme' (change of color and shape)
+  3. see music manipulator in visualizations
+  
+**Optional implementations**
+
+  * combine different songs by splittng and merging audio channels
+  * adding beats to the songs
+  * using microphone to add sounds 
+
+
+## Prerequisites
+* **data sources**  
+  data will be chosen by the user using soundcloud 
+  https://soundcloud.com/stream 
+  
+* **external components**
+  Web Audio API is a build-in function in JavaScript, the documentation can be found here:
+  https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+
+* **similar visualizations** 
+  * frequency barchart: 
+      https://www.bignerdranch.com/blog/music-visualization-with-d3-js/  
+      https://www.html5rocks.com/en/tutorials/webaudio/intro/ 
+  
+  * shape update visualization: 
+      https://preziotte.com/blog/partymode/ 
+      http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
+ 
+  * music manipulation tool: 
+      https://roadtolarissa.com/synth/ 
+      http://thesynth.herokuapp.com/#!/
+      
+* **hardest parts** 
+  * live data is being extracted all the time. the visualization should update itself constantly. 
+  * linking the visualizations
+  * transforming the shapes using the transition function in d3
+  * understanding Web Audio API 
+   
 
