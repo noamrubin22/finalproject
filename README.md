@@ -1,6 +1,6 @@
 # Music visualization 
-Final project of the programming minor - music will be used as data and by using d3 it will be visualized.
-Noam Rubin 10800565 - June 2018
+## Final project of the programming minor Noam Rubin 10800565
+D3 visualization using music as data.
 
 ## Problem statement
 This visualization will be an addition for music lovers that either don’t have the knowledge of how to use a synthesizer or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. Complementing knowledge about how songs are being constructed would help the process of creating a new song.
@@ -24,7 +24,7 @@ This data visualization will approach this problem by giving the users the freed
   3. See music manipulator in visualizations
   
 **Optional implementations**
-  * Combine different songs by splittng and merging audio channels
+  * Combine different songs by splitting and merging audio channels
   * Adding beats to the songs
   * Using microphone to add sounds 
 
@@ -34,7 +34,7 @@ This data visualization will approach this problem by giving the users the freed
   https://soundcloud.com/stream 
   
 * **External components**
-  None! The only function that is needed is the Web Audio API, but this is a build-in function in JavaScript. The documentation can be found here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+  None! The only function that is needed (for now) is the Web Audio API, but this is a build-in function in JavaScript. The documentation can be found here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 
 * **Similar visualizations** 
   * Frequency barchart: 
