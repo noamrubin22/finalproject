@@ -19,7 +19,7 @@ This data visualization will approach this problem by giving the users the freed
  https://roadtolarissa.com/synth/ 
 
 ## A sketch of the visualization
-
+![](https://github.com/noamrubin22/finalproject/blob/master/doc/sketch.jpg) 
 
 ## Other implementations and difficulties
 Other implementations would be the ability to change the color-theme of the visualization or the shapes. I would expect difficulties by linking all 3 visualizations to each other. Besides, the option to add and manipulate sounds will be a challenge. 
