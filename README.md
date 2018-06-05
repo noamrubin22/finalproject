@@ -1,5 +1,5 @@
 # Music visualization 
-## Final project of the programming minor Noam Rubin 10800565
+## Final project Noam Rubin 10800565
 D3 visualization using music as data.
 
 ## Problem statement
