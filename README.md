@@ -34,7 +34,7 @@ This data visualization will approach this problem by giving the users the freed
   https://soundcloud.com/stream 
   
 * **External components**
-  None! The only function that is needed (for now) is the Web Audio API, but this is a build-in function in JavaScript. The documentation can be found here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+    None! The only function that is needed (for now) is the Web Audio API, but this is a build-in function in JavaScript. The documentation can be found here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 
 * **Similar visualizations** 
   * Frequency barchart: 
