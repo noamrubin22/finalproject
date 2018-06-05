@@ -1,9 +1,9 @@
 # Music visualization 
-Final project of minor programming 
+Final project of the programming minor -
 Noam Rubin 10800565 - June 2018
 
 ## Problem and solution
-This visualization is perfect for music lovers that either don’t have the knowledge of how to use a DJ-set or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement that idea. 
+This visualization is perfect for music lovers that either don’t have the knowledge of how to use a DJ-set or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. 
 This data visualization will approach this problem by giving the users the freedom to add beats and change sounds. The shape visualization will be the finishing touch: after manipulating the song the visualization can be projected on parties!  
 
 ## Prerequisites
@@ -20,12 +20,17 @@ This data visualization will approach this problem by giving the users the freed
 
 ## A sketch of the visualization
 
+
 ## Other implementations and difficulaties
 Other implementations would be the ability to change the color-theme of the visualization or the shapes. I would expect difficulties by linking all 3 visualizations to each other. Besides, the option to add and manipulate sounds will be a challenge. 
 
 ## To do
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+- [ ] get approval proposal
+- [ ] understand Web Audio API
+- [ ] create frequency bar chart
+- [ ] create shape visualization
+- [ ] create music manipulator
+- [ ] implement update ability for color 
+- [ ] implement update ability for shapes
+- [ ] link visualizations
 
