@@ -15,8 +15,9 @@ This data visualization will approach this problem by giving the users the freed
   https://preziotte.com/blog/partymode/ 
   http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
 
-  *	**Music manipulator**: this looks a bit more complicated. I am not sure how I will implement this but looking forward to get some advice from you. 
+  *	**Music manipulator**: this looks a bit more complicated. Again by using the Web Audio API it will be possible to add an oscillator, change the gain (volume) and frequency.
  https://roadtolarissa.com/synth/ 
+ http://thesynth.herokuapp.com/#!/
 
 ## A sketch of the visualization
 ![](https://github.com/noamrubin22/finalproject/blob/master/doc/sketch.jpg) 
