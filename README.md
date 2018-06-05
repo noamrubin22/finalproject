@@ -16,12 +16,12 @@ This data visualization will approach this problem by giving the users the freed
   http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
 
   *	**Music manipulator**: this looks a bit more complicated. I am not sure how I will implement this but looking forward to get some advice from you. 
-  https://roadtolarissa.com/synth/ 
+ https://roadtolarissa.com/synth/ 
 
 ## A sketch of the visualization
 
 
-## Other implementations and difficulaties
+## Other implementations and difficulties
 Other implementations would be the ability to change the color-theme of the visualization or the shapes. I would expect difficulties by linking all 3 visualizations to each other. Besides, the option to add and manipulate sounds will be a challenge. 
 
 ## To do
