@@ -8,7 +8,7 @@ This visualization will be an addition for music lovers that either don’t have
 ## Solution
 This data visualization will approach this problem by giving the users the freedom to manipulate sounds and visualize the deconstruction of songs.
 
-![](https://github.com/noamrubin22/finalproject/blob/master/doc/sketch.jpg) 
+![](https://github.com/noamrubin22/finalproject/blob/master/doc/sketchy.jpg) 
 
 ### Main features
 **Minimum viable product implementations**
