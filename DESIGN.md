@@ -4,6 +4,16 @@
 Data that will be used for this project is dynamic. As every song changes over time, so will the visualization.
 The Web Audio API helps us to extract the characteristics of each song, by creating an array of numbers.
 
+### Soundcloud API option 
+The user will decide what kind of data will be used by chosing a song from Soundcloud. 
+This option will be implemented in the following way: 
+  
+  * function soundCloud(): 
+     1. get API
+     2. SC.initialize with client_id 
+     3. SC.get chosen track
+     4. load chosen track to soundHTML5
+
 ### Synthesizer 
 **Audio nodes** are linked together by their inputs and outputs to form an audio routing graph. 
 In order to modify the sounds, filter nodes can be attached. The following filters can be used: 
@@ -37,13 +47,13 @@ The following properties can be extracted:
 This methods tells the browser to update the animation onscreen whenever its ready. It will request that the animation function be called before the browser performs the next repaint. This is needed since the visualization will have to update constantly as the data (song) changes over time.
 
 #### Frequency barchart
-    * frameLooper 
+    * function frameLooper 
          * window.requestAnimationFrame(frameLooper)
          * getByteFrequencyData() into Uint8Array
          * update barchart with the bar_height determined by the frequency-array
              
 #### Shape visualization
-     * frameLooper 
+     * function frameLooper 
            * window.requestAnimationFrame(frameLooper)
            * getByteTimeDomainData() into Uint8Array
            * update shape (for example: circle) based on the wavelength-array 
@@ -57,7 +67,10 @@ When a song property is being modified using the synthesizer, the array that is 
 For example:
 
       1.  The frequency is increased within the synthesizer by 20%
-      2.  Values in the array should all be multiplied by 1.20 
-      3.  Frequency barchart will be updated   
+      2.  Values in the frequency-array should all be multiplied by 1.20 
+      3.  Frequency barchart should be updated   
       
 The same should happen for the wavelength / shape visualization.
+
+### Changing themes
+In order to give the user the possibility to change in between themes I will create 3 different themes in CSS. Those themes will differ from each other in color and/or visualization shapes. Changing between the themes will happen through a function changeTheme() that clears and adds the CSS classes according to the chosen theme. 
