@@ -16,14 +16,14 @@ This data visualization will approach this problem by giving the users the freed
  *Visualizations*
   1. **Frequency barchart**: this barchart will update itself based on the frequency of the song
   2. **Shape update visualization**: shapes will transform into others based on the wavelength of the song
-  3. **Music manipulation tool**: this tool will provide the option to manipulate songs by changing the frequency or volume and adding a delay or a filter (low/high- pass)
+  3. **Synthesizer**: this tool will provide the option to manipulate songs by changing the frequency or volume and adding a delay or a filter (low/high- pass)
 
  *Interactive features*
   1. Change of data by addition soundcloud song 
   2. Change 'visualization-theme' (change of color and shape)
   3. See music manipulator in visualizations
   
-**Optional implementations**
+***Optional implementations***
   * Combine different songs by splitting and merging audio channels
   * Adding beats to the songs
   * Using microphone to add sounds 
