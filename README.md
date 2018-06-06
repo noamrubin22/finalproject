@@ -27,7 +27,8 @@ This data visualization will approach this problem by giving the users the freed
   * Combine different songs by splitting and merging audio channels
   * Adding beats to the songs
   * Using microphone to add sounds 
-
+  * Possibility to save created songs
+  
 ## Prerequisites
 * **Data sources**  
   Data will be chosen by the user using soundcloud 
