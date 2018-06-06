@@ -41,14 +41,14 @@ This methods tells the browser to update the animation onscreen whenever its rea
 
 #### Frequency barchart
 * frameLooper 
-             * window.requestAnimationFrame(frameLooper)
-             * getByteFrequencyData() into Uint8Array
-             * update barchart with the bar_height determined by the frequency-array
+             *  window.requestAnimationFrame(frameLooper)
+             *  getByteFrequencyData() into Uint8Array
+             *  update barchart with the bar_height determined by the frequency-array
              
 #### Shape visualization
 * frameLooper 
-             * window.requestAnimationFrame(frameLooper)
-             * getByteTimeDomainData() into Uint8Array
-             * update shape (for example: circle) based on the wavelength-array 
+             *  window.requestAnimationFrame(frameLooper)
+             *  getByteTimeDomainData() into Uint8Array
+             *  update shape (for example: circle) based on the wavelength-array 
 
 #### Synthesizer 
