@@ -27,7 +27,8 @@ This data visualization will approach this problem by giving the users the freed
   * Combine different songs by splitting and merging audio channels
   * Adding beats to the songs
   * Using microphone to add sounds 
-
+  * Possibility to save created songs
+  
 ## Prerequisites
 * **Data sources**  
   Data will be chosen by the user using soundcloud 
@@ -45,9 +46,11 @@ This data visualization will approach this problem by giving the users the freed
       https://preziotte.com/blog/partymode/ 
       http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
  
-  * Music manipulation tool: 
+  * Synthesizer: 
       https://roadtolarissa.com/synth/ 
       http://thesynth.herokuapp.com/#!/
+      
+      lay-out sliders: https://www.w3schools.com/howto/howto_js_rangeslider.asp 
       
 * **Hardest parts** 
   * Live data is being extracted all the time. The visualization should update itself constantly. 
