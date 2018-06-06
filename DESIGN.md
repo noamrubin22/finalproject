@@ -9,10 +9,10 @@ The user will decide what kind of data will be used by chosing a song from Sound
 This option will be implemented by creating the following function: 
  
  function soundCloud(): 
-     1. get API
-     2. SC.initialize with client_id 
-     3. SC.get chosen track
-     4. load chosen track to soundHTML5
+   * get API
+   * SC.initialize with client_id 
+   * SC.get chosen track
+   * load chosen track to soundHTML5
 
 an explanation can be found here: https://www.youtube.com/watch?v=8TuqjGxosrc&t=318s
 
@@ -67,9 +67,9 @@ Each time the slider handle will be dragged, the current slider value should be 
 ## Linking the visualizations
 When a song property is being modified using the synthesizer, the array that is holding it should be updated accordingly. 
 For example:
-       * The frequency is increased within the synthesizer by 20%
-       * Values in the frequency-array should all be multiplied by 1.20 
-       * Frequency barchart should be updated   
+    * The frequency is increased within the synthesizer by 20%
+    * Values in the frequency-array should all be multiplied by 1.20 
+    * Frequency barchart should be updated   
 
 The same should happen for the wavelength / shape visualization.
 
