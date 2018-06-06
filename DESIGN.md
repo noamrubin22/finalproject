@@ -58,7 +58,7 @@ This methods tells the browser to update the animation onscreen whenever its rea
          * getByteTimeDomainData() into Uint8Array
          * update shape (for example: circle) based on the wavelength-array 
 
-### Synthesizer 
+### *Synthesizer*
 For the visualization of the synthesizer a bootstrap range slider will be used.
 Each time the slider handle will be dragged, the current slider value should be updated.
 
