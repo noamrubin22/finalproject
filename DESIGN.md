@@ -40,8 +40,8 @@ The following properties can be extracted:
    
    These methods can be used to store the properties:
    
-   * getByteFrequencyData(): copies the current frequency into a Uint8Array
-   * getByteTimeDomainData(): copies the current waveform, or time-domain, data into a Uint8Array
+   *  getByteFrequencyData(): copies the current frequency into a Uint8Array
+   *  getByteTimeDomainData(): copies the current waveform, or time-domain, data into a Uint8Array
    
 The option of using a Float32Array is also a possibility. Which array will suit the data better will have to be figured out later in the process.
 
@@ -67,9 +67,9 @@ Each time the slider handle will be dragged, the current slider value should be 
 ## Linking the visualizations
 When a song property is being modified using the synthesizer, the array that is holding it should be updated accordingly. 
 For example:
-    1.  The frequency is increased within the synthesizer by 20%
-    2.  Values in the frequency-array should all be multiplied by 1.20 
-    3.  Frequency barchart should be updated   
+    1. The frequency is increased within the synthesizer by 20%
+    2. Values in the frequency-array should all be multiplied by 1.20 
+    3. Frequency barchart should be updated   
 
 The same should happen for the wavelength / shape visualization.
 
