@@ -52,6 +52,9 @@ This data visualization will approach this problem by giving the users the freed
       
       lay-out sliders: https://www.w3schools.com/howto/howto_js_rangeslider.asp 
       
+  * Soundcloud API: 
+      https://www.youtube.com/watch?v=8TuqjGxosrc 
+      
 * **Hardest parts** 
   * Live data is being extracted all the time. The visualization should update itself constantly. 
   * Linking the visualizations
