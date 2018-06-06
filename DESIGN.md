@@ -56,9 +56,9 @@ This methods tells the browser to update the animation onscreen whenever its rea
              
 ### *Shape visualization*
    * frameLooper function()
-         * window.requestAnimationFrame(frameLooper)
-         * getByteTimeDomainData() into Uint8Array
-         * update shape (for example: circle) based on the wavelength-array 
+       * window.requestAnimationFrame(frameLooper)
+       * getByteTimeDomainData() into Uint8Array
+       * update shape (for example: circle) based on the wavelength-array 
 
 ### *Synthesizer*
 For the visualization of the synthesizer a bootstrap range slider will be used.
@@ -67,9 +67,9 @@ Each time the slider handle will be dragged, the current slider value should be 
 ## Linking the visualizations
 When a song property is being modified using the synthesizer, the array that is holding it should be updated accordingly. 
 For example:
-    1. The frequency is increased within the synthesizer by 20%
-    2. Values in the frequency-array should all be multiplied by 1.20 
-    3. Frequency barchart should be updated   
+       1. The frequency is increased within the synthesizer by 20%
+       2. Values in the frequency-array should all be multiplied by 1.20 
+       3. Frequency barchart should be updated   
 
 The same should happen for the wavelength / shape visualization.
 
