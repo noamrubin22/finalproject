@@ -19,9 +19,6 @@ headphones.
 
 ![](doc/audiocontext.png)
 
-wavelength: through an OscillatorNode: which represents a periodic waveform. 
-PeriodicWave: descripes a periodic waveform that can be used to shape the output of an OscillatorNode.
-
 ### Data visualization
 The **AnalyserNode** can be used to collect the characteristics from our audio file and visualize them.
 The following properties can be extracted: 
@@ -38,7 +35,6 @@ The following properties can be extracted:
 **window.requestAnimationFrame(callback)**
 This methods tells the browser to update the animation onscreen whenever its ready. It will request that the animation function be called before the browser performs the next repaint. This is needed since the visualization will have to update constantly as the data (song) changes over time.
 
-
 #### Frequency barchart
 * frameLooper 
      * window.requestAnimationFrame(frameLooper)
@@ -47,8 +43,17 @@ This methods tells the browser to update the animation onscreen whenever its rea
              
 #### Shape visualization
 * frameLooper 
-             *  window.requestAnimationFrame(frameLooper)
-             *  getByteTimeDomainData() into Uint8Array
-             *  update shape (for example: circle) based on the wavelength-array 
+     * window.requestAnimationFrame(frameLooper)
+     * getByteTimeDomainData() into Uint8Array
+     * update shape (for example: circle) based on the wavelength-array 
 
 #### Synthesizer 
+For the visualization of the synthesizer a bootstrap range slider will be used.
+Each time the slider handle will be dragged, the current slider value should be updated.
+
+### Linking the visualizations
+When a song property is being modified using the synthesizer, the array that is holding it should be updated accordingly. 
+For example: 1. The frequency is increased within the synthesizer by 20%
+             2. Values in the array should all be multiplied by 1.20 
+             3. Frequency barchart will be updated 
+The same should happen for the wavelength / shape visualization.
