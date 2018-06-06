@@ -1,10 +1,10 @@
 # A technical approach
 
 ## Data extraction
-Data that will be used for this project is dynamic. As every song changes over time, so does the visualization.
+Data that will be used for this project is dynamic. As every song changes over time, so will the visualization.
 The Web Audio API helps us to extract the characteristics of each song, by creating an array of numbers.
 
-# Synthesizer 
+### Synthesizer 
 **Audio nodes** are linked together by their inputs and outputs to form an audio routing graph. 
 In order to modify the sounds, filter nodes can be attached. The following filters can be used: 
   * GainNode: makes sound louder or quieter 
@@ -22,7 +22,7 @@ headphones.
 wavelength: through an OscillatorNode: which represents a periodic waveform. 
 PeriodicWave: descripes a periodic waveform that can be used to shape the output of an OscillatorNode.
 
-## Data visualization
+### Data visualization
 The **AnalyserNode** can be used to collect the characteristics from our audio file and visualize them.
 The following properties can be extracted: 
    * fftSize: determines the frequency domain
@@ -36,18 +36,19 @@ The following properties can be extracted:
    The option of using a Float32Array is also a possibility. Which array will suit the data better will have to be figured out later in the process.
 
 **window.requestAnimationFrame(callback)**
-This methods tells the browser to update the animation onscreen whenever its ready. It will request that the animation function be called before the browser performs the next repaint. This is needed since the visualization will have to update constantly. 
+This methods tells the browser to update the animation onscreen whenever its ready. It will request that the animation function be called before the browser performs the next repaint. This is needed since the visualization will have to update constantly as the data (song) changes over time.
 
 
-### Frequency barchart
+#### Frequency barchart
 * frameLooper 
              * window.requestAnimationFrame(frameLooper)
              * getByteFrequencyData() into Uint8Array
-             * clear barchart
-             * create barchart with the bar_height determined by the frequency-array
+             * update barchart with the bar_height determined by the frequency-array
              
-### Shape visualization
+#### Shape visualization
 * frameLooper 
              * window.requestAnimationFrame(frameLooper)
              * getByteTimeDomainData() into Uint8Array
-             * create barchart with the bar_height determined by the frequency-array
+             * update shape (for example: circle) based on the wavelength-array 
+
+#### Synthesizer 
