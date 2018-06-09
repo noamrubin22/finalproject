@@ -2,12 +2,16 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="barchart.css">
+
+		<!-- d3 library -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="barchart.js"></script>
 	</head>
 	<body>
-		<div id = "mp3_player">
+		<!-- <div id = "mp3_player"> -->
+<!-- 		<div id = "svg"></div> -->
 			<div id= "audio_box"></div>
-			<canvas id= "analyser_render"></canvas>
+			<svg id= "analyser_render"></canvas>
 		</div>
 		<input id="audio_file" type="file" accept="audio/*" />
 		<audio id="audio_player" crossorigin="anonymous"/>
