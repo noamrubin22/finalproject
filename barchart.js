@@ -99,6 +99,6 @@ window.onload = function(){
 			.attr("width", function(d) {
 				return d;
 			})
-			.attr("fill", "purple");
+			.attr("fill", "grey" );
 	}
 }
