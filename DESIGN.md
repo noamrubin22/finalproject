@@ -48,6 +48,10 @@ The option of using a Float32Array is also a possibility. Which array will suit 
 **window.requestAnimationFrame(callback)**
 This methods tells the browser to update the animation onscreen whenever its ready. It will request that the animation function be called before the browser performs the next repaint. This is needed since the visualization will have to update constantly as the data (song) changes over time.
 
+![](doc/summary.png)
+
+This image shows a summary of the audio route
+
 ### *Frequency barchart*
   * frameLooper function()
        * window.requestAnimationFrame(frameLooper)
