@@ -64,7 +64,7 @@ window.onload = function(){
 		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
         analyserNode.getByteFrequencyData(frequencyArray);
         
-        console.log(frequencyArray);
+        // console.log(frequencyArray);
         
         // clear svg 
         d3.select("svg").remove();
