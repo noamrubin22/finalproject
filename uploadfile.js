@@ -1,5 +1,4 @@
-
-window.onload = function(){
+function uploadFile() {
 
 	// substract variables from html
 	const realFileButton = document.getElementById("real-file");
@@ -25,4 +24,6 @@ window.onload = function(){
 			customText.innerHTML = "No file chosen, yet."
 		};
 	})
+
+	return realFileButton.value
 };

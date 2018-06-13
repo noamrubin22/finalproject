@@ -1,6 +1,8 @@
 
 window.onload = function(){
 	
+	// call uploadFile function
+	uploadFile()
 
 	// initialize audio element
 	var audio = new Audio(); 
@@ -14,7 +16,7 @@ window.onload = function(){
 		// let it play 
 		audio.controls = true;
 		audio.loop = true; 
-		audio.autoplay = true;
+		audio.autoplay = false;
 		console.log("hoi")
 
 	audio.onchange = function(){
@@ -42,9 +44,6 @@ window.onload = function(){
         // create analyserNode 
         var analyserNode = context.createAnalyser(); 
 
-        // 
-        var canvas = document.getElementById("analyser_render"); 
-
         // re-route audio playback into the processing graph of the Audio context
         var source = context.createMediaElementSource(audio);
         
@@ -71,21 +70,26 @@ window.onload = function(){
         d3.select("svg").remove();
 
 		// initialize properties
-		var w = 900;
-		var h = 900;
+		var w = 700;
+		var h = 400;
 		var bars = frequencyArray.length;
 		var barHeight = w - padding
 		var barWidth = h / bars;
 		var padding = 1;
 
 		// append svg element
-		var svg = d3.select("body")
+		var svg_div = d3.select(".svg-div")
 					.append("svg")
+					.attr("id", "graph-svg")
 					.attr("width", w)
 					.attr("height", h);
+					// .attr("x", 109)
+					// .attr("y", 200);
+					
+		var graph_svg = d3.select("#graph-svg")
 
 		// add rectangles
-		svg.selectAll("rect")
+		graph_svg.selectAll("rect")
 			.data(frequencyArray)
 			.enter()
 			.append("rect")
@@ -99,6 +103,6 @@ window.onload = function(){
 			.attr("width", function(d) {
 				return d;
 			})
-			.attr("fill", "grey" );
+			.attr("fill", "#321238" );
 	}
 }
