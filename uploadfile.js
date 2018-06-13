@@ -76,11 +76,8 @@ function updateBarChart(newsong) {
 	audio_player.play();
 	};
 
-	// document.getElementById("audio_box").remove(0)
-
-	// add created audio element to the audio box on the page
+	// replace audio element to the audio box on the page
     var audioElement = document.getElementById("audio_box")
-
     audioElement.replaceChild(audio, audioElement.childNodes[0]);
 	
 	// create audiocontext
