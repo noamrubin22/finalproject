@@ -62,6 +62,8 @@ window.onload = function(){
 
 		// substract frequencies
 		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
+
+		// copy frequency data into array
         analyserNode.getByteFrequencyData(frequencyArray);
         
         // console.log(frequencyArray);
@@ -83,9 +85,8 @@ window.onload = function(){
 					.attr("id", "graph-svg")
 					.attr("width", w)
 					.attr("height", h);
-					// .attr("x", 109)
-					// .attr("y", 200);
-					
+
+
 		var graph_svg = d3.select("#graph-svg")
 
 		// add rectangles
@@ -105,4 +106,3 @@ window.onload = function(){
 			})
 			.attr("fill", "#321238" );
 	}
-}

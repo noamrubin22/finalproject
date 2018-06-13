@@ -6,7 +6,6 @@
 			float: right; 
 			}
 
-
 /*frequency bar*/
 #graph-svg {
 	float: right;
@@ -15,8 +14,15 @@
 	height: 400px;
 }
 
-/* upload file */
+/*shape chart*/
+#shape-svg {
+	background-color: white;
+	width: 400px;
+	height: 400px;
+	margin: 10% 10%;
+}
 
+/* upload file */
 .uploadfile { 
 	background-color: red;
 	width: 170px;

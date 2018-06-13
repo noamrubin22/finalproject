@@ -1,18 +1,32 @@
 # Processbook
 
 ## **di 5 juni**: 
-proposal gemaakt
+*	created proposal.
+
 ## **wo 6 juni**: 
-design map gemaakt, web audio uitgezocht
+*	created design file
+*	got a better understanding of the web audio API
+
 ## **do 7 juni**:
-helaas geeft soundcloud geen API's meer, nagedacht over nieuwe manier van muziek uploaden. conclusie: ik wil de gebruikers een playlist geven en de mogelijkheid om zelf mp3 files up te loaden.
+*	been busy with finding a new way to let the user use their own music since I found out that Soundcloud is not giving any API's anymore. The conclusion: I want to give the users a playlist and the possibility to upload mp3 files.
+
 ## **vrij 8 juni**: 
-presentaties
+* 	presentations
+
 ## **zat 9 juni**: 
-moeite met muziek uploaden omdat mp3 files lokaal zijn opgeslagen. oplossing: chrome extentie gedownload zodat ik een server kan aanmaken/ met python een server aanmaken. frequencybarchart aangepast
+*	had some difficulties with uploading mp3 files since those are local files. The solution for this is downloading a Chrome Extention so a local server can be created.
+* 	adjusted frequency barchart.
+
 ## **ma 11 juni**: 
-ziek
+due to illness I couldn't work on the project
+
 ## **di 12 juni**: 
-upload functie aangemaakt, posities van html elementen geprobeerd te verbeteren 
-## ** wo 13 juni**: 
-update barchart functie aangemaakt die de input pakt van het upgeloade mp3 bestand.
+*	created upload function
+*	improved position html elements
+
+## **wo 13 juni**: 
+* 	created update-barchart function which takes the input of uploaded mp3 file.
+*	created shape visualization 	
+		*	circles added based on wavelength
+		* 	I am considering making a shape-transition visualization because that might be cooler
+*	I am having problems with putting both visualization in my html
