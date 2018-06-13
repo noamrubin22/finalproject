@@ -1,8 +1,4 @@
-
-window.onload = function(){
-	
-	// call uploadFile function
-	uploadFile()
+function frequencyBarChart(){ 
 
 	// initialize audio element
 	var audio = new Audio(); 
@@ -17,7 +13,7 @@ window.onload = function(){
 		audio.controls = true;
 		audio.loop = true; 
 		audio.autoplay = false;
-		console.log("hoi")
+		// console.log("hoi")
 
 	audio.onchange = function(){
 	// """ Being executed when audio context changes """
@@ -34,6 +30,7 @@ window.onload = function(){
 	// play audio
 	audio_player.play();
 	};
+
 
 	// add created audio element to the audio box on the page
     document.getElementById("audio_box").appendChild(audio);
@@ -53,7 +50,7 @@ window.onload = function(){
         // connect visualizationdata to destination
         analyserNode.connect(context.destination);
 
-	createBarChart()
+     	createBarChart()
 
 	function createBarChart() {
 		// """ Creates a dynamic barchart """
@@ -105,4 +102,5 @@ window.onload = function(){
 				return d;
 			})
 			.attr("fill", "#321238" );
-	}
+	};
+};

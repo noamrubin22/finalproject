@@ -1,10 +1,11 @@
 window.onload = function(){
 
 	// call uploadFile function
-	realFileButton = uploadFile()
+	uploadFile()
 
-	audio = startAudio()
+	frequencyBarChart()
 
-	createBarChart(audio)
+	circleChart()
 
+	// createBarChart(audio)
 };

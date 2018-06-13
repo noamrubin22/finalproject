@@ -29,4 +29,4 @@ due to illness I couldn't work on the project
 *	created shape visualization 	
 		*	circles added based on wavelength
 		* 	I am considering making a shape-transition visualization because that might be cooler
-*	I am having problems with putting both visualization in my html
+*	I am having problems with putting both visualization in my html: it's hard to make 			functions out of the audio element which leaves me with 2 audio elements.. so I have to 	work on that!

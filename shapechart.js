@@ -1,7 +1,4 @@
-window.onload = function(){
-    
-    // // call uploadFile function
-    uploadFile()
+function circleChart() {
 
     // initialize audio element
     var audio = new Audio(); 
@@ -52,8 +49,8 @@ window.onload = function(){
         analyserNode.connect(context.destination);
 
         // initialize properties
-    var svgHeight = 400,
-    svgWidth = 400;
+    var svgHeight = 500,
+    svgWidth = 500;
 
     var svgShaper = d3.select('.svgShaper')
                 .append('svg')
@@ -90,7 +87,7 @@ window.onload = function(){
                         .data(waveLengthArray)
                         .enter()
                         .append("circle")
-                        .attr("r", function(d) { console.log(d); return radiusScale(d);})
+                        .attr("r", function(d) { return radiusScale(d);})
                         .attr("cx", svgWidth /2)
                         .attr("cy", svgHeight /2)
                         .attr("fill", "none")

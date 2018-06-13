@@ -3,7 +3,7 @@
 #audio_box { 
 			width:300px;
 			background: orange; 
-			float: right; 
+			float: left; 
 			}
 
 /*frequency bar*/
@@ -16,16 +16,17 @@
 
 /*shape chart*/
 #shape-svg {
-	background-color: white;
-	width: 400px;
-	height: 400px;
-	margin: 10% 10%;
+	background-color: black;
+	width: 500px;
+	height: 500px;
+	float: left;
 }
 
 /* upload file */
 .uploadfile { 
 	background-color: red;
 	width: 170px;
+	float: right;
 }
 
 #custom-button {
