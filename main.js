@@ -1,11 +1,15 @@
 window.onload = function(){
 
+
 	// call uploadFile function
 	uploadFile()
 
-	frequencyBarChart()
+	analyserNode = playAudio()
 
-	circleChart()
+	createBarChart(analyserNode)
+
+	createCircleChart(analyserNode)
+	// circleChart()
 
 	// createBarChart(audio)
 };

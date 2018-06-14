@@ -30,3 +30,7 @@ due to illness I couldn't work on the project
 		*	circles added based on wavelength
 		* 	I am considering making a shape-transition visualization because that might be cooler
 *	I am having problems with putting both visualization in my html: it's hard to make 			functions out of the audio element which leaves me with 2 audio elements.. so I have to 	work on that!
+
+## **do 14 juni**
+*	created the extra functions so both charts are linked to the same audio element
+*	made sure that both charts are updated when mp3 file is uploaded

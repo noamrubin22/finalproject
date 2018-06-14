@@ -2,21 +2,21 @@
 /*mp3 player*/
 #audio_box { 
 			width:300px;
-			background: orange; 
+			/*background: orange; */
 			float: left; 
 			}
 
 /*frequency bar*/
 #graph-svg {
-	float: right;
-	background-color: blue;
+	float: left;
+	/*background-color: green;*/
 	width: 400px;
 	height: 400px;
 }
 
 /*shape chart*/
 #shape-svg {
-	background-color: black;
+	/*background-color: black;*/
 	width: 500px;
 	height: 500px;
 	float: left;
@@ -24,9 +24,9 @@
 
 /* upload file */
 .uploadfile { 
-	background-color: red;
+	/*background-color: red;*/
 	width: 170px;
-	float: right;
+	float: left;
 }
 
 #custom-button {

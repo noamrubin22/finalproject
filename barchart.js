@@ -1,70 +1,82 @@
-function frequencyBarChart(){ 
+// function frequencyBarChart(){ 
 
-	// initialize audio element
-	var audio = new Audio(); 
-      
-		// make sure CODS are set to None 
-		audio.crossOrigin = 'anonymous';
+	function playAudio() {
 
-		// choose song
-		audio.src = "raga.mp3";
-
-		// let it play 
-		audio.controls = true;
-		audio.loop = true; 
-		audio.autoplay = false;
-		// console.log("hoi")
-
-	audio.onchange = function(){
-	// """ Being executed when audio context changes """
-
-		// create files in this 
-		var files = this.files;
-
-		// store objecturl 
-		var file = URL.createObjectURL(files[0]); 
-
-				// set objecturl to audioplayer
-				audio_player.src = file; 
-
-	// play audio
-	audio_player.play();
-	};
+		// initialize audio element
+		var audio = new Audio(); 
+	      
+			// make sure CODS are set to None 
+			audio.crossOrigin = 'anonymous';
 
 
-	// add created audio element to the audio box on the page
-    document.getElementById("audio_box").appendChild(audio);
-	
-	// create audiocontext
-	context = new AudioContext();
+			// use uploaded song
+			audio.src = "raga.mp3";
+		
+			// let it play 
+			audio.controls = true;
+			audio.loop = true; 
+			audio.autoplay = false;
+			// console.log("hoi")
 
-        // create analyserNode 
-        var analyserNode = context.createAnalyser(); 
+		audio.onchange = function(){
+		// """ Being executed when audio context changes """
 
-        // re-route audio playback into the processing graph of the Audio context
-        var source = context.createMediaElementSource(audio);
-        
-        // connect audio context analyser
-        source.connect(analyserNode);
-        
-        // connect visualizationdata to destination
-        analyserNode.connect(context.destination);
+			// create files in this 
+			var files = this.files;
 
-     	createBarChart()
+			// store objecturl 
+			var file = URL.createObjectURL(files[0]); 
 
-	function createBarChart() {
+					// set objecturl to audioplayer
+					audio_player.src = file; 
+
+		// play audio
+		audio_player.play();
+		};
+
+
+
+		// add created audio element to the audio box on the page
+	   	document.getElementById("audio_box").appendChild(audio);
+
+		// // add created audio element to the audio box on the page
+	 //    document.getElementById("audio_box").appendChild(audio);
+		
+		// create audiocontext
+		context = new AudioContext();
+
+	        // create analyserNode 
+	        var analyserNode = context.createAnalyser(); 
+
+	        // re-route audio playback into the processing graph of the Audio context
+	        var source = context.createMediaElementSource(audio);
+	        
+	        // connect audio context analyser
+	        source.connect(analyserNode);
+	        
+	        // connect visualizationdata to destination
+	        analyserNode.connect(context.destination);
+
+		return analyserNode;
+    } 
+     	// createBarChart(analyserNode)
+
+	function createBarChart(anaylserNode) {
 		// """ Creates a dynamic barchart """
 
-		window.requestAnimationFrame(createBarChart);
-
+		window.requestAnimationFrame(function() {
+			createBarChart(analyserNode)
+		});
+		// console.log(analyserNode)
 		// substract frequencies
 		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 
 		// copy frequency data into array
         analyserNode.getByteFrequencyData(frequencyArray);
+        // console.log("hey")
         
         // console.log(frequencyArray);
-        
+        // console.log(anaylserNode)
         // clear svg 
         d3.select("svg").remove();
 
@@ -101,6 +113,7 @@ function frequencyBarChart(){
 			.attr("width", function(d) {
 				return d;
 			})
-			.attr("fill", "#321238" );
+			.attr("fill", "blue" );
+			// console.log("haay")
 	};
-};
+// };

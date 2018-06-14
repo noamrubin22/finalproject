@@ -27,13 +27,13 @@ function uploadFile() {
 
 		// if a file is chosen
 		if (realFileButton.value) {
-			console.log(document.getElementById("real-file").files[0].name
-)
+			// console.log(document.getElementById("real-file").files[0].name)
+
 			// show filename
 			customText.innerHTML = document.getElementById("real-file").files[0].name
 
 			// call updatebarchart function
-			updateBarChart(customText.innerHTML);
+			updateChart(customText.innerHTML);
 
 		
 		// if file is not chosen yet
@@ -43,7 +43,7 @@ function uploadFile() {
 	})
 };
 
-function updateBarChart(newsong) {
+function updateChart(newsong) {
 
 	// initialize audio element
 	var audio = new Audio(); 
@@ -58,7 +58,7 @@ function updateBarChart(newsong) {
 		audio.controls = true;
 		audio.loop = true; 
 		audio.autoplay = false;
-		console.log("hoi")
+		// console.log("hoi")
 
 	audio.onchange = function(){
 	// """ Being executed when audio context changes """
@@ -95,7 +95,10 @@ function updateBarChart(newsong) {
         // connect visualizationdata to destination
         analyserNode.connect(context.destination);
 
-	createBarChart()
+    // console.log(analyserNode)
+	createBarChart(analyserNode)
+	// console.log("hoi")
+	createShapeChart(analyserNode)
 
 
 	function createBarChart() {
