@@ -26,7 +26,7 @@
 .uploadfile { 
 	/*background-color: red;*/
 	width: 170px;
-	float: left;
+	margin: center;
 }
 
 #custom-button {
@@ -37,7 +37,7 @@
 		border-radius: 5px;
 		cursor: pointer;
     	text-align:center;
-    	margin: auto;
+    	margin: center;
     	font-family: MaisonNeue;
 }
 
