@@ -143,12 +143,12 @@ function updateChart(newsong) {
 					return i * w / bars - padding;
 			})
 			.attr("x", function(d) {
-				return h - d;
+				return - d;
 			})
 			.attr("height", barWidth)
 			.attr("width", function(d) {
-				return d;
+				return h - d;
 			})
-			.attr("fill", "#321238" );
+			.attr("fill", "blue" );
 	};
 };
