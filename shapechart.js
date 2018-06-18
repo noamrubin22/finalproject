@@ -52,8 +52,8 @@
     function createCircleChart(analyserNode) {
 		// """ Creates a dynamic barchart """
         // initialize properties
-        svgHeight = 500,
-        svgWidth = 500;
+        svgHeight = 1000,
+        svgWidth = 1000;
 
        svgShaper = d3.select('.svgShaper')
                     .append('svg')
@@ -96,18 +96,14 @@
                             .enter()
                             .append("circle")
                             .attr("r", function(d) { return radiusScale(d);})
-                            .attr("cx", svgWidth /2)
-                            .attr("cy", svgHeight /2)
+                            .attr("cx", svgWidth / 1.5)
+                            .attr("cy", svgHeight / 6)
                             .attr("fill", "none")
                             // .attr("stroke-width", 2)
                             .attr("stroke-opacity", 0.4)
                             .attr("stroke", function(d) { return d3.hsl(hueScale(d), 1, 0.5)});
             // console.log(analyserNode)
         };
-
-    // just for blocks viewer size
-    d3.select(self.frameElement).style('height', '700px');
-
 // };
 
     

@@ -81,7 +81,7 @@
         d3.select("svg").remove();
 
 		// initialize properties
-		var w = 700;
+		var w = 1000;
 		var h = 400;
 		var bars = frequencyArray.length;
 		var barHeight = w - padding

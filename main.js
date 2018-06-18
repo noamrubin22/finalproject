@@ -9,7 +9,5 @@ window.onload = function(){
 	createBarChart(analyserNode)
 
 	createCircleChart(analyserNode)
-	// circleChart()
 
-	// createBarChart(audio)
 };

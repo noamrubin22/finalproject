@@ -2,31 +2,40 @@
 /*mp3 player*/
 #audio_box { 
 			width:300px;
+			position: absolute;
+			margin-top: 20px;
+			margin-left: 450px;
+			margin-
 			/*background: orange; */
-			float: left; 
+			float: auto; 
 			}
 
 /*frequency bar*/
 #graph-svg {
-	float: left;
+	position: absolute;
+	margin-top: 5px;
 	/*background-color: green;*/
 	width: 400px;
-	height: 400px;
+	height: 700px;
 }
 
 /*shape chart*/
 #shape-svg {
 	/*background-color: black;*/
-	width: 500px;
-	height: 500px;
-	float: left;
+	width: 700px;
+	height: 700px;
+	position: absolute;
+	margin-left: 800px;	
+	margin-top: 0px;
 }
 
 /* upload file */
 .uploadfile { 
 	/*background-color: red;*/
 	width: 150px;
-	/*height: 50px;*/
+	position: absolute;
+	margin-top: 90px;
+	margin-left: 535px;
 	margin: left;
 }
 
@@ -51,22 +60,32 @@
 }
 
 /*synthesizer*/
-/*.slidecontainer {
-    width: 50%%; /* Width of the outside container */
+.slidecontainer {
+    width: 50%%;
+    position: absolute;
+    margin-left: 520px;
+    margin-top: 180px;
 }
 
-/* The slider itself */
-.slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+.settingsBar {
+	position: absolute;
+	margin-left: 520px;
+	margin-top: 220px;
+}
+
+
+/*/* /*The slider itself */
+/*.slider {*/
+    -webkit-appearance: none;  /* Override default CSS styles 
     appearance: none;
     width: 40%; /* Full-width */
     height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
+    background: #d3d3d3;  Grey background 
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-}
+}*/*/
 
 /* Mouse-over effects */
 .slider:hover {
@@ -88,4 +107,7 @@
     height: 25px; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
+   	position: absolute;
+    margin-left: 535px;
+    margin-top: 90px;
 }*/
