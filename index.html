@@ -10,7 +10,8 @@
 		<script src="barchart.js"></script>
 		<script src="uploadfile.js"></script>
 		<script src="shapechart.js"></script>
-		<!-- <script src="synthesizer.js"></script> -->
+		<script src="synthesizer.js"></script>
+		<script src="audiocontext.js"></script>
 
 		<!-- boottrap -->
 	<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -40,9 +41,11 @@
 		<!-- slider -->
 		<div class="slidecontainer">
 			<span> Frequency: </span>
-  			<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  			<input type="range" min="1" max="100" value="50" class="slider" name="frequencyRange">
 		</div>
 
+		<!-- linegraph -->
+		<div id="linegraph"></div>
 
 		<!-- synthesizer -->
 		<div class="settingsBar">
@@ -54,6 +57,7 @@
 		      <option value="0.0" label="Mute">
 		      <option value="1.0" label="100%">
 		    </datalist>
+		
 
 			<div class="waveform">
 		    <span>Current waveform: </span>
@@ -64,8 +68,12 @@
 		      <option value="triangle">Triangle</option>
 		      <option value="custom">Custom</option>
 		    </select>
-		  </div>
+		 	</div>
 		</div>
+		</div>
+
+		<div id= "osc"></div>
+		<input id="oscPitch" type="range" min="50" max="5000" step="1" value="90"/>
 
 		
 
