@@ -1,41 +1,41 @@
-window.onload = function() { 
+function synthesizer(source) {
 
-	// initialize audio element
-	var audio = new Audio(); 
+	// // initialize audio element
+	// var audio = new Audio(); 
       
-		// make sure CODS are set to None 
-		audio.crossOrigin = 'anonymous';
+	// 	// make sure CODS are set to None 
+	// 	audio.crossOrigin = 'anonymous';
 
-		// use uploaded song
-		audio.src = "raga.mp3";
+	// 	// use uploaded song
+	// 	audio.src = "raga.mp3";
 	
-		// let it play 
-		audio.controls = true;
-		audio.loop = true; 
-		audio.autoplay = false;
-		// console.log("hoi")
+	// 	// let it play 
+	// 	audio.controls = true;
+	// 	audio.loop = true; 
+	// 	audio.autoplay = false;
+	// 	// console.log("hoi")
 
-	audio.onchange = function(){
+	// audio.onchange = function(){
 
-		// create files in this 
-		var files = this.files;
+	// 	// create files in this 
+	// 	var files = this.files;
 
-		// store objecturl 
-		var file = URL.createObjectURL(files[0]); 
+	// 	// store objecturl 
+	// 	var file = URL.createObjectURL(files[0]); 
 
-				// set objecturl to audioplayer
-				audio_player.src = file; 
+	// 			// set objecturl to audioplayer
+	// 			audio_player.src = file; 
 
-	// play audio
-	audio_player.play();
-	};
+	// // play audio
+	// audio_player.play();
+	// };
 
 
-	// add created audio element to the audio box on the page
-   	document.getElementById("audio_box").appendChild(audio);
+	// // add created audio element to the audio box on the page
+ //   	document.getElementById("audio_box").appendChild(audio);
 
-	// create audiocontext that work on multiple browsers
-	var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+	// // create audiocontext that work on multiple browsers
+	// var context = new (window.AudioContext || window.webkitAudioContext)();
 	var voiceSelect = document.getElementById("voice");
 	var selectedVolume = document.getElementById("volume");
 	var selectedDistortion = document.getElementById("distortion");
@@ -47,14 +47,14 @@ window.onload = function() {
 	console.log("filter", selectedFilter.value);
 	console.log("bass:", selectedBassBooster);
 	// create audio source
-	// var oscillator = audioCtx.createOscillator();
-	var analyser = audioCtx.createAnalyser();
-	var distortion = audioCtx.createWaveShaper();
-	var gainNode = audioCtx.createGain();
-	var biquadFilter = audioCtx.createBiquadFilter();
+	// var oscillator = context.createOscillator();
+	var analyser = context.createAnalyser();
+	var distortion = context.createWaveShaper();
+	var gainNode = context.createGain();
+	var biquadFilter = context.createBiquadFilter();
 
     // re-route audio playback into the processing graph of the Audio context
-    var source = audioCtx.createMediaElementSource(audio);
+    // var source = context.createMediaElementSource(audio);
 	
 	// connect nodes
 	source.connect(analyser);
@@ -62,7 +62,7 @@ window.onload = function() {
 	analyser.connect(distortion);
 	distortion.connect(biquadFilter);
 	biquadFilter.connect(gainNode);
-	gainNode.connect(audioCtx.destination);
+	gainNode.connect(context.destination);
 
 	// slider values
 	var changedDistortion = selectedDistortion.value;
@@ -77,7 +77,7 @@ window.onload = function() {
 		console.log(changedVolume)
 
 		// adjust gainnode to change volume
-		gainNode.gain.setValueAtTime(changedVolume, audioCtx.currentTime);
+		gainNode.gain.setValueAtTime(changedVolume, context.currentTime);
 	};
 
 
@@ -96,10 +96,10 @@ window.onload = function() {
 		console.log(newFilterValue)
 
 	    // only let frequencies above 1000 get through
-	    biquadFilter.frequency.setTargetAtTime(newFilterValue, audioCtx.currentTime, 0)
+	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
 
 	    // if frequency is lower than above, add 30 
-	    biquadFilter.gain.setTargetAtTime(30, audioCtx.currentTime, 0);
+	    biquadFilter.gain.setTargetAtTime(30, context.currentTime, 0);
 	};
 
 	// when volume value changes
@@ -117,10 +117,10 @@ window.onload = function() {
 		console.log(newFilterValue)
 
 	    // only let frequencies above 1000 get through
-	    biquadFilter.frequency.setTargetAtTime(newFilterValue, audioCtx.currentTime, 0)
+	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
 
 	    // if frequency is lower than above, add 30 
-	    biquadFilter.gain.setTargetAtTime(30, audioCtx.currentTime, 0);
+	    biquadFilter.gain.setTargetAtTime(30, context.currentTime, 0);
 
 	};
 
@@ -129,6 +129,7 @@ window.onload = function() {
 	selectedDistortion.onchange = function() {
 
 	changedDistortion = selectedDistortion.value * 400;
+	
 	// use distortion curve to change sound
     distortion.curve = Distortion(changedDistortion);
     console.log(changedDistortion)
@@ -151,8 +152,6 @@ function Distortion(amount) {
 		x = i * 2 / n_samples - 1;
 		curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
 	}
-
-	console.log("Hoi")
 	return curve;
 };
 

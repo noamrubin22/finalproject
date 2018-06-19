@@ -49,5 +49,5 @@ function playAudio() {
         // connect visualizationdata to destination
         analyserNode.connect(context.destination);
 
-	return analyserNode;
+	return source, analyserNode;
 }

@@ -6,12 +6,14 @@
 		<!-- d3 library -->
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script>
-		<script src="main.js"></script>
+
+		<script src="audiocontext.js"></script>
 		<script src="barchart.js"></script>
 		<script src="uploadfile.js"></script>
 		<script src="shapechart.js"></script>
-		<script src="synthesizer.js"></script>
-		<script src="audiocontext.js"></script>
+		<!-- <script src="synthesizer.js"></script> -->
+		<script src="test.js"></script>
+		<script src="main.js"></script>
 
 	</head>
 	<body>
@@ -27,46 +29,24 @@
 		</div>
 
 		<!-- synthesizer -->
-
-		<div class="container">
-			<div class="synthesizer"></div>
-		</div>
-
-		<!-- slider -->
-		<div class="slidecontainer">
-			<span> Frequency: </span>
-  			<input type="range" min="1" max="100" value="50" class="slider" name="frequencyRange">
-		</div>
-
-		<!-- linegraph -->
-		<div id="linegraph"></div>
-
-		<!-- synthesizer -->
-		<div class="settingsBar">
-			<div class="volumecontrol">
+		<div class="synthesizer">
 			<span>Volume: </span>
-		    <input type="range" min="0.0" max="1.0" step="0.01"
-		        value="0.5" list="volumes" name="volume">
-		   	<datalist id="volumes">
-		      <option value="0.0" label="Mute">
-		      <option value="1.0" label="100%">
-		    </datalist>
-		
-			<div class="waveform">
-		    <span>Current waveform: </span>
-		    <select name="waveform">
-		      <option value="sine">Sine</option>
-		      <option value="square" selected>Square</option>
-		      <option value="sawtooth">Sawtooth</option>
-		      <option value="triangle">Triangle</option>
-		      <option value="custom">Custom</option>
-		    </select>
-		 	</div>
-		</div>
+			<input type="range" min="0.0" max="10.0" step="0.1"
+			        value="5.0" id= "volume">
+			
+			<span>Distortion: </span>
+			<input type="range" min="0.0" max="1.0" step="0.01"
+			        value="0.5" id= "distortion">
+			
+			<span> Bass Booster: </span>
+			<input type="range" min="0.0" max="1.0" step="0.01"
+	        		value="0.5" id= "lowpassfilter">
+			
+			<span>High pass filter: </span>       
+	        <input type="range" min="0.0" max="1.0" step="0.01"
+	        		value="0.5" id= "filter">
 		</div>
 
-		<div id= "osc"></div>
-		<input id="oscPitch" type="range" min="50" max="5000" step="1" value="90"/>
-      	</div>
+		<button class="button">Reset</button>
 	</body>
 </html>

@@ -60,32 +60,15 @@
 }
 
 /*synthesizer*/
-.slidecontainer {
-    width: 50%%;
+.synthesizer {
+    width: 350px;
+    height: 350px;
     position: absolute;
-    margin-left: 520px;
+    background-color: grey;
+    margin-left: 500px;
     margin-top: 180px;
 }
 
-.settingsBar {
-	position: absolute;
-	margin-left: 520px;
-	margin-top: 220px;
-}
-
-#osc {
-	background-color: orange;
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	margin-left: 520px;
-	margin-top: 270px;
-}
-
-#oscPitch {
-	margin-left: 520px;
-	margin-top: 330px;
-}
 
 #linegraph {
 	background-color: pink;
@@ -96,41 +79,43 @@
 	margin-left: 400px;
 }
 
-#
-/*/* /*The slider itself */
-/*.slider {*/
-    -webkit-appearance: none;  /* Override default CSS styles 
-    appearance: none;
-    width: 40%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: #d3d3d3;  Grey background 
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-}*/*/
-
-/* Mouse-over effects */
-.slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+/*resetbutton*/
+.button {
+    position: relative;
+    background-color: #af8dc3;
+    border: none;
+    font-size: 15px;
+    color: #f7f7f7;
+    padding: 5px;
+    width: 50px;
+    margin-left: 550px;
+    margin-top: 300px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
 }
 
- The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look)  
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+.button:after {
+    content: "";
+    background: yellow;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
 }
 
-.slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-   	position: absolute;
-    margin-left: 535px;
-    margin-top: 90px;
-}*/
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+

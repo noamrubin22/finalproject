@@ -4,11 +4,11 @@ window.onload = function(){
 	// call uploadFile function
 	uploadFile()
 
-	analyserNode = playAudio()
+	source, analyserNode = playAudio()
 
 	createBarChart(analyserNode)
 
 	createCircleChart(analyserNode)
-	
-	synthesizer()
+
+	synthesizer(source)
 };
