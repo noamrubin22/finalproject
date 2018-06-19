@@ -9,5 +9,6 @@ window.onload = function(){
 	createBarChart(analyserNode)
 
 	createCircleChart(analyserNode)
+	
 	synthesizer()
 };

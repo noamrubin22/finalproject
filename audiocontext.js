@@ -37,9 +37,6 @@ function playAudio() {
 	// create audiocontext
 	context = new AudioContext();
 
-		var gainNode = context.createGain();
-		gainNode.gain.value = 0.5;
-
         // create analyserNode 
         var analyserNode = context.createAnalyser(); 
 
