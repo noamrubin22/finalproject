@@ -1,12 +1,8 @@
 ////////////////////////////////////////////////////////
-// Heuristieken: Lectures & Lesroosters               //
+// Heuristieken: Finalproject Musicvisualization      //
 //                                                    //
-// Names: Tessa Ridderikhof, Najib el Moussaoui       //
-//       & Noam Rubin                                 //
-//                                                    //
-// This code is able to run different algorithms in   //
-// order to solve the scheduleling optimalisation     //
-// problem                                            //
+// Name:  Noam Rubin       	                          //
+//                                                    //                                         //
 //                                                    //
 ////////////////////////////////////////////////////////
 
@@ -94,11 +90,12 @@ function updateChart(newsong) {
         
         // connect visualizationdata to destination
         analyserNode.connect(context.destination);
-
+	
+	analyserNode = synthesizer(context, source)
     // console.log(analyserNode)
 	createBarChart(analyserNode)
 	// console.log("hoi")
-	createShapeChart(analyserNode)
+	// createShapeChart(analyserNode)
 
 
 	function createBarChart() {
@@ -116,7 +113,7 @@ function updateChart(newsong) {
 	    d3.select("svg").remove();
 
 		// initialize properties
-		var w = 700;
+		var w = 1100;
 		var h = 400;
 		var bars = frequencyArray.length;
 		var barHeight = w - padding

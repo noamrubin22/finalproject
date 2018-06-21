@@ -1,6 +1,7 @@
 function createBarChart(anaylserNode) {
 	// """ Creates a dynamic barchart """
 
+	// makes sure that data is updated before overdrawing it
 	window.requestAnimationFrame(function() {
 		createBarChart(analyserNode)
 	});
@@ -32,7 +33,7 @@ function createBarChart(anaylserNode) {
 
 	var graph_svg = d3.select("#graph-svg")
 
-	// add rectangles
+	// draw frequencybar
 	graph_svg.selectAll("rect")
 		.data(frequencyArray)
 		.enter()
@@ -47,5 +48,5 @@ function createBarChart(anaylserNode) {
 		.attr("width", function(d) {
 			return h - d;
 		})
-		.attr("fill", "blue" );
-};
+		.attr("fill",  "blue" );
+};7

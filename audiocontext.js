@@ -5,7 +5,7 @@ function playAudio() {
       
 		// make sure CODS are set to None 
 		audio.crossOrigin = 'anonymous';
-
+		console.log("hey");
 		// use uploaded song
 		audio.src = "raga.mp3";
 	
@@ -30,24 +30,26 @@ function playAudio() {
 	audio_player.play();
 	};
 
-
+	console.log("hay");
 	// add created audio element to the audio box on the page
    	document.getElementById("audio_box").appendChild(audio);
 	
 	// create audiocontext
-	context = new AudioContext();
+	var context = new AudioContext();
 
-        // create analyserNode 
-        var analyserNode = context.createAnalyser(); 
+    // create analyserNode 
+    var analyserNode = context.createAnalyser(); 
 
-        // re-route audio playback into the processing graph of the Audio context
-        var source = context.createMediaElementSource(audio);
-        
-        // connect audio context analyser
-        source.connect(analyserNode);
-        
-        // connect visualizationdata to destination
-        analyserNode.connect(context.destination);
+    // re-route audio playback into the processing graph of the Audio context
+    var source = context.createMediaElementSource(audio);
+    
+    // connect audio context analyser
+    source.connect(analyserNode);
+    
+    // connect visualizationdata to destination
+    analyserNode.connect(context.destination);
 
-	return source, analyserNode;
+    console.log(context);
+
+	return [context, source, analyserNode];
 }
