@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8">
+		<title> Music visualization</title>
+		<!-- d3 library -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script>
+
+		<script src="audiocontext.js"></script>
+		<script src="barchart.js"></script>
+		<script src="uploadfile.js"></script>
+		<script src="shapechart.js"></script>
+		<script src="synthesizer.js"></script>
+		<script src="main.js"></script>
+
+	</head>
+	<body>
+		<h4> You need the <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en"> Google Chrome extention</a> to make this website work</h4>
+		<div class ="svg-div"></div>
+		<div id= "audio_box"></div>
+		<div class="svgShaper"></div>
+
+		<div class="uploadfile">
+ 		<!-- upload file button -->
+			<input type="file" id="real-file" hidden="hidden" />
+			<button type="button" id="custom-button">UPLOAD YOUR MP3 FILE</button>
+			<span id="custom-text">No file chosen yet</span>
+		</div>
+
+		<!-- synthesizer -->
+		<div class="synthesizer">
+			<div class="sol-sm">
+			<!-- 	<div class= "form-group">
+					<label for="volume">Volume: </label>
+					<input type="range" min="0.0" max="10.0" step="0.1"
+					        value="5.0" id= "volume">
+				</div> -->
+				<div class= "form-group">				
+				<div class= "form-group">
+					<label for="distortion">Distortion: </label>
+					<input type="range" min="0.0" max="1.0" step="0.01"
+					        value="0.0" id= "distortion">
+				</div>
+				<div class= "form-group">				
+				<div>
+					<label for="lowpassfilter"> Bass Booster: </label>
+					<input type="range" min="0.0" max="1.0" step="0.01"
+			        		value="0.0" id= "lowpassfilter">
+				</div>
+				<div class= "form-group">
+				<div>	
+					<label for="filter">High pass filter: </label>       
+			        <input type="range" min="0.0" max="1.0" step="0.01"
+			        		value="0.0" id= "filter">
+				</div>
+				<button id="button">Reset</button>
+			</div>
+		</div>
+
+
+	</body>
+</html>

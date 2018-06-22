@@ -27,9 +27,9 @@ due to illness I couldn't work on the project
 ## **wed 13 june**: 
 * 	created update-barchart function which takes the input of uploaded mp3 file.
 *	created shape visualization 	
-		*	circles added based on wavelength
-		* 	I am considering making a shape-transition visualization because that might be cooler
-*	I am having problems with putting both visualization in my html: it's hard to make 			functions out of the audio element which leaves me with 2 audio elements.. so I have to 	work on that!
+*	circles added based on wavelength
+* 	I am considering making a shape-transition visualization because that might be 			cooler
+*	I am having problems with putting both visualization in my html: it's hard to make 		functions out of the audio element which leaves me with 2 audio elements.. so I 		have to work on that!
 
 ## **thu 14 june**
 *	created the extra functions so both charts are linked to the same audio element
@@ -38,3 +38,18 @@ due to illness I couldn't work on the project
 ## **fri 15 june**
 *	presentations
 *	started with synthesizer
+
+## **mon 18 june**
+*	still busy with the synthesizer, had some difficulties understanding it. Read a lot
+
+## **tue 19 june**
+*	synthesizer finally works!! In a test file. Now I want to implement a reset button since the manipulation of the song doesn't sound as an improvement yet. I guess I should also pracitce to make it sound like something.
+
+## **wed 20 june**
+*	had some troubles with the reset button of the synthesizer
+
+## **thu 21 june**
+*	implemented synthesizer with the rest of the charts
+
+## **fri 22 june**
+*	charts are updated when synthesizer is used! yes :) I have my MVP now. 3 visualizations: the barchart, circlechart and synthesizer. atm I am in doubt whether I should make a metronome or a linegraph so I will have an extra visualization.

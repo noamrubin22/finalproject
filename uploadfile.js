@@ -92,9 +92,9 @@ function updateChart(newsong) {
         analyserNode.connect(context.destination);
 	
 	analyserNode = synthesizer(context, source)
-    // console.log(analyserNode)
+
 	createBarChart(analyserNode)
-	// console.log("hoi")
+
 	// createShapeChart(analyserNode)
 
 
@@ -105,7 +105,10 @@ function updateChart(newsong) {
 
 		// substract frequencies
 		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
+
 	    analyserNode.getByteFrequencyData(frequencyArray);
+
+
 	    
 	    // console.log(frequencyArray);
 	    

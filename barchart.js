@@ -49,4 +49,4 @@ function createBarChart(anaylserNode) {
 			return h - d;
 		})
 		.attr("fill",  "blue" );
-};7
+};

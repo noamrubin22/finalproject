@@ -1,3 +1,5 @@
+var globalFilterValue;
+
 function synthesizer(context, source) {
 
 		// var selectedVolume = document.getElementById("volume");
@@ -18,12 +20,11 @@ function synthesizer(context, source) {
 		var biquadFilter = context.createBiquadFilter();
 
 		// connect nodes
-		source.connect(analyserNode);
-		// analyser.connect(oscillator);
-		analyserNode.connect(distortion);
+		source.connect(distortion);
 		distortion.connect(biquadFilter);
 		biquadFilter.connect(gainNode);
-		gainNode.connect(context.destination);
+		gainNode.connect(analyserNode);
+		analyserNode.connect(context.destination);
 
 		// slider values
 		var changedDistortion = selectedDistortion.value;
@@ -42,13 +43,14 @@ function synthesizer(context, source) {
 	// when volume value changes
 	function filterChange() {
 
-
 		// use lowshelf filter
 		biquadFilter.type = "highpass";
 
 		// calculate new filter value
 		var newFilterValue = selectedFilter.value * 10000;
 		// console.log("newfilter:", newFilterValue)
+
+		globalFilterValue = newFilterValue;
 
 	    // only let frequencies above 1000 get through
 	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
