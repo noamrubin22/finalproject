@@ -21,9 +21,9 @@ function createBarChart(anaylserNode) {
 	var w = d3.select("#timTest")._groups["0"]["0"].clientHeight;
 	var h = d3.select("#timTest")._groups["0"]["0"].clientWidth;
 	var bars = frequencyArray.length;
-	var padding = 1;
-	var barHeight = w - padding;
-	var barWidth = h / bars;
+	// console.log(w);
+	var padding = 0.2;
+	var barWidth = w / bars;
 	
 
 	// append svg element
@@ -31,7 +31,7 @@ function createBarChart(anaylserNode) {
 				.append("svg")
 				.attr("id", "graph-svg")
 				.attr("width", h)
-				.attr("height", w);
+				.attr("height", w - padding);
 
 
 	// var graph_svg = d3.select("#graph-svg")
@@ -40,31 +40,26 @@ function createBarChart(anaylserNode) {
 				.domain([0, 255])
 				.range([0, 160]);
 
-	// var xScale = d3.scaleLinear()
-	// 					.domain([d3.min(frequencyArray, function(d)  {
-	// 						console.log(d)
-	// 						return d })]), d3.max(frequencyArray, function(d) { return d})
-	// 					.range([0, h], 0.1);
+	var y = d3.scaleLinear()
+				.domain(255)
+				.range([160, 0])
 
-	// var yScale = d3.scaleLinear()
-	// 				.domain([d3.max(frequencyArray, function(d) {
-	// 					return d })])
-	// 				.range([0, h], 0.1);
 
-	console.log(frequencyArray)
-
+	// console.log(frequencyArray)
+	// console.log(barWidth)
+	// console.log(bars)
 	// draw frequencybar
 	svg_div.selectAll("rect")
 		.data(frequencyArray)
 		.enter()
 		.append("rect")
 		.attr("y", function(d, i) {
-				return i * w / bars - padding;
+				return i * (w / bars) ;
 		})
 		.attr("x", function(d) {
 			return - x(d);
 		})
-		.attr("height", barWidth)
+		.attr("height", barWidth *2 )
 		.attr("width", function(d) {
 			return h - x(d);
 		})
