@@ -1,43 +1,81 @@
+html, body {height: 100%;}
+
+
+.wrapper{
+	display:grid;
+	grid-template-columns: 1fr 2fr 3fr;
+	grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
+	grid-auto-rows: minmax(100px, auto);
+	grid-gap: 0.5em;
+	justify-items: stretch;
+	align-items: stretch;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper >div {
+	padding: 1em;
+}
+
+.informationbox {
+	grid-column: 1/5; 
+	grid-row: 1/2;
+}
+
+.svg-barchart {
+	grid-column: 1/2;
+	grid-row: 2/6;
+}
+
+#audio-box {
+	grid-column: 2/3;
+	grid-row: 2;
+	/*height: 200px;*/
+}
+
+.svgShaper {
+	grid-column: 3/5;
+	grid-row: 1/5;
+	border: 1px solid #333;
+}
+
+.uploadfile {
+	grid-column: 2/3;
+	grid-row: 3/4;
+	align-items: center;
+}
+
+.synthesizer {
+	grid-column: 2/3;
+	grid-row: 4;
+}
+
+.box6 {
+	grid-column: 6;
+	grid-row: 5/6;
+}
 
 /*mp3 player*/
-#audio_box { 
-			width:300px;
-			position: absolute;
-			margin-top: 20px;
-			margin-left: 450px;
-			margin-
-			/*background: orange; */
-			float: auto; 
-			}
 
 /*frequency bar*/
-#graph-svg {
-	position: absolute;
+/*#graph-svg {
+/*	position: absolute;
 	margin-top: 5px;
-	/*background-color: green;*/
+	background-color: green;
 	width: 400px;
-	height: 700px;
+	height: 700px;*/
 }
 
 /*shape chart*/
-#shape-svg {
+/*#shape-svg {
 	width: 700px;
 	height: 700px;
 	position: absolute;
 	margin-left: 800px;	
 	margin-top: 0px;
 }
-
-/* upload file */
-.uploadfile { 
-	/*background-color: red;*/
-	width: 150px;
-	position: absolute;
-	margin-top: 90px;
-	margin-left: 535px;
-	margin: left;
-}
-
+*/
+ /*upload file */
 #custom-button {
 		padding: 10px;
 		color: white;
@@ -59,8 +97,8 @@
 		font-size: 13px;
 }
 
-/*synthesizer*/
-.synthesizer {
+/*synthesizer
+/*.synthesizer {
     width: 260px;
     height: 220px;
     position: absolute;
@@ -68,8 +106,8 @@
     margin-left: 500px;
     margin-top: 180px;
     border: #ced966;
-}
-
+}*/
+/*
 .sol-sm {
 	position: absolute;
 	margin-left: 15px;
@@ -84,7 +122,7 @@
 	height: 200px;
 	margin-top: 400px;
 	margin-left: 400px;
-}
+}*/
 
 /*resetbutton*/
 .button {
@@ -124,26 +162,4 @@
     opacity: 1;
     transition: 0s
 }
-
-/*metronome*/
-/*.contain/*er {*/
-	/*height: 200px;*/
-	/*background-color: black;*/
-
-.row {
-	height: 200px;
-	width: 150px;
-	background-color: pink;
-}
-
-.col-sm {
-	margin-left: 5px;
-	margin-top: 400px;
-	background-color: yellow;
-
-}
-
-#visualization {
-	margin-left: 50px;
-	margin-top: 200px;
-}
+?

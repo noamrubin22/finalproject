@@ -32,7 +32,7 @@ function playAudio() {
 
 	console.log("hay");
 	// add created audio element to the audio box on the page
-   	document.getElementById("audio_box").appendChild(audio);
+   	document.getElementById("audio-box").appendChild(audio);
 	
 	// create audiocontext
 	var context = new AudioContext();

@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	</head>
+		<meta charset="UTF-8">
+		<title> Music visualization</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/>">
+		<!-- d3 library -->
+		<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+		<!-- <script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script> -->
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="informationbox">
+				<center><h6> Download the <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en"> Google Chrome extention</a> to make this website work</h6>
+				<h4> Music visualization</h4> <p style="font-size: 70%">By Noam Rubin</p></center>
+			</div>
+
+			<div class ="svg-barchart" id="timTest"></div>
+			<div id= "audio-box"></div>
+			<div class="svgShaper"></div>
+
+ 			<!-- upload file button -->
+			<div class="uploadfile">
+				<input type="file" id="real-file" hidden="hidden" />
+				<button type="button" id="custom-button">UPLOAD YOUR MP3 FILE</button>
+				<span id="custom-text">No file chosen yet</span>
+			</div>
+
+			<!-- synthesizer -->
+			<div class="synthesizer">
+						<label for="distortion">Distortion: </label>
+						<input type="range" min="0.0" max="1.0" step="0.01"
+						        value="0.0" id= "distortion">
+						<label for="lowpassfilter"> Bass Booster: </label>
+						<input type="range" min="0.0" max="1.0" step="0.01"
+				        		value="0.0" id= "lowpassfilter">
+	
+						<label for="filter">High pass filter: </label>       
+				        <input type="range" min="0.0" max="1.0" step="0.01"
+				        		value="0.0" id= "filter">
+						
+						<button id="button">Reset</button>
+			</div>
+	
+			<div class="box 6"></div>
+			
+		</div>
+			
+			
+
+
+		<!-- metronome -->
+		<!-- <div class="container">
+		    <div class="row">
+		        <div class="col-sm">
+		            <div class="form-group">
+		                <label for="tempo">Tempo</label>
+		                <input id="tempo" class='form-control' type="number" value='60'
+		                min='20' max='180' onChange="metronomeApp.setTempo(this.value);">
+		            </div>
+		            <div class="form-group">
+		                <label for="metroSound">Sound</label>
+		                <select id="metroSound" class="form-control"
+		                        onChange="metronomeApp.setSound(this.selectedIndex + 1)">
+		                </select>
+		            </div>
+		            <div class="form-group">
+		                <label for="visType">Visualization</label>
+		                <select id="visType" class="form-control"
+		                        onChange="metronomeApp.setVisualization(this.selectedIndex)">
+		                </select>
+		            </div>
+		            <input id="metronome" class="form-control btn btn-secondary"
+		                   type="button" value="Start" onclick="metronomeApp.toggle()"/>
+		        
+		        <div id='visualization'></div>
+		    </div> -->
+		<!-- </div> -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script>
+		<!-- Javascript scripts -->
+		<script src="audiocontext.js"></script>
+		<script src="barchart.js"></script>
+		<script src="uploadfile.js"></script>
+		<script src="shapechart.js"></script>
+		<script src="synthesizer.js"></script>
+		<script src="main.js"></script>
+
+		<!-- For bootstrap -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -23,14 +23,12 @@ function uploadFile() {
 
 		// if a file is chosen
 		if (realFileButton.value) {
-			// console.log(document.getElementById("real-file").files[0].name)
 
 			// show filename
 			customText.innerHTML = document.getElementById("real-file").files[0].name
 
 			// call updatebarchart function
 			updateChart(customText.innerHTML);
-
 		
 		// if file is not chosen yet
 		} else {
@@ -73,7 +71,7 @@ function updateChart(newsong) {
 	};
 
 	// replace audio element to the audio box on the page
-    var audioElement = document.getElementById("audio_box")
+    var audioElement = document.getElementById("audio-box")
     audioElement.replaceChild(audio, audioElement.childNodes[0]);
 	
 	// create audiocontext
@@ -95,22 +93,19 @@ function updateChart(newsong) {
 
 	createBarChart(analyserNode)
 
-	// createShapeChart(analyserNode)
 
-
-	function createBarChart() {
+	function createBarChart(analyserNode) {
 		// """ Creates a dynamic barchart """
 
-		window.requestAnimationFrame(createBarChart);
+			// makes sure that data is updated before overdrawing it
+		window.requestAnimationFrame(function() {
+		createBarChart(analyserNode)
+		});
 
 		// substract frequencies
 		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 
 	    analyserNode.getByteFrequencyData(frequencyArray);
-
-
-	    
-	    // console.log(frequencyArray);
 	    
 	    // clear svg 
 	    d3.select("svg").remove();
@@ -124,7 +119,7 @@ function updateChart(newsong) {
 		var padding = 1;
 
 		// append svg element
-		var svg_div = d3.select(".svg-div")
+		var svg_div = d3.select(".svg-barchart")
 					.append("svg")
 					.attr("id", "graph-svg")
 					.attr("width", w)
