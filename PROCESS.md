@@ -53,3 +53,6 @@ due to illness I couldn't work on the project
 
 ## **fri 22 june**
 *	charts are updated when synthesizer is used! yes :) I have my MVP now. 3 visualizations: the barchart, circlechart and synthesizer. atm I am in doubt whether I should make a metronome or a linegraph so I will have an extra visualization.
+
+## **mon 25 june** 
+*	read into css grid and gridded my page. frequency barchart keeps causing me problems by not scaling well. 
