@@ -30,7 +30,7 @@ function playAudio() {
 	audio_player.play();
 	};
 
-	console.log("hay");
+	// console.log("hay");
 	// add created audio element to the audio box on the page
    	document.getElementById("audio-box").appendChild(audio);
 	
@@ -48,8 +48,6 @@ function playAudio() {
     
     // connect visualizationdata to destination
     analyserNode.connect(context.destination);
-
-    console.log(context);
 
 	return [context, source, analyserNode];
 }

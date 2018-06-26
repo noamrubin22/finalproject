@@ -3,7 +3,7 @@ html, body {height: 100%;}
 
 .wrapper{
 	display:grid;
-	grid-template-columns: 1fr 2fr 3fr;
+	grid-template-columns: 1fr 1fr 1fr 3fr;
 	grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
 	grid-auto-rows: minmax(100px, auto);
 	grid-gap: 0.5em;
@@ -19,7 +19,7 @@ html, body {height: 100%;}
 }
 
 .informationbox {
-	grid-column: 1/5; 
+	grid-column: 1/3; 
 	grid-row: 1/2;
 }
 
@@ -35,9 +35,15 @@ html, body {height: 100%;}
 
 .svgShaper {
 	grid-column: 3/5;
-	grid-row: 1/5;
-	border: 1px solid #333;
+	grid-row: 1/6;
+	align-items: stretch;
+	/*border: 1px solid #333;*/
 }
+
+.svg { 
+	width: 100%;
+ 	height: 100%;
+ }
 
 .uploadfile {
 	grid-column: 2/3;
@@ -55,26 +61,28 @@ html, body {height: 100%;}
 	grid-row: 5/6;
 }
 
-/*mp3 player*/
-
-/*frequency bar*/
-/*#graph-svg {
-/*	position: absolute;
-	margin-top: 5px;
-	background-color: green;
-	width: 400px;
-	height: 700px;*/
-}
-
-/*shape chart*/
-/*#shape-svg {
-	width: 700px;
-	height: 700px;
+#shape-svg {
 	position: absolute;
-	margin-left: 800px;	
-	margin-top: 0px;
+	margin-left: 440px;
 }
-*/
+
+#shape-svg2 {
+	position: absolute;
+	margin-left: 380px;
+	margin-top: 150px;
+}
+
+#shape-svg3 {
+	position: absolute;
+	margin-left: 290px;
+}
+
+#shape-svg4 {
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 220px;
+}
+
  /*upload file */
 #custom-button {
 		padding: 10px;
@@ -97,32 +105,6 @@ html, body {height: 100%;}
 		font-size: 13px;
 }
 
-/*synthesizer
-/*.synthesizer {
-    width: 260px;
-    height: 220px;
-    position: absolute;
-    background-color: 	grey;
-    margin-left: 500px;
-    margin-top: 180px;
-    border: #ced966;
-}*/
-/*
-.sol-sm {
-	position: absolute;
-	margin-left: 15px;
-	margin-top: 40px;
-}
-
-
-#linegraph {
-	background-color: pink;
-	position: absolute;
-	width: 400px;
-	height: 200px;
-	margin-top: 400px;
-	margin-left: 400px;
-}*/
 
 /*resetbutton*/
 .button {

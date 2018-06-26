@@ -94,56 +94,64 @@ function updateChart(newsong) {
 	createBarChart(analyserNode)
 
 
-	function createBarChart(analyserNode) {
-		// """ Creates a dynamic barchart """
+function createBarChart(anaylserNode) {
+	// """ Creates a dynamic barchart """
 
-			// makes sure that data is updated before overdrawing it
-		window.requestAnimationFrame(function() {
+	// makes sure that data is updated before overdrawing it
+	window.requestAnimationFrame(function() {
 		createBarChart(analyserNode)
-		});
+	});
 
-		// substract frequencies
-		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
+	// substract frequencies
+	frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 
-	    analyserNode.getByteFrequencyData(frequencyArray);
-	    
-	    // clear svg 
-	    d3.select("svg").remove();
+	// copy frequency data into array
+    analyserNode.getByteFrequencyData(frequencyArray);
 
-		// initialize properties
-		var w = 1100;
-		var h = 400;
-		var bars = frequencyArray.length;
-		var barHeight = w - padding
-		var barWidth = h / bars;
-		var padding = 1;
+    // clear svg
+    d3.select("#graph-svg").remove();
 
-		// append svg element
-		var svg_div = d3.select(".svg-barchart")
-					.append("svg")
-					.attr("id", "graph-svg")
-					.attr("width", w)
-					.attr("height", h);
-					// .attr("x", 109)
-					// .attr("y", 200);
-					
-		var graph_svg = d3.select("#graph-svg")
+    // console.log(d3.select("#timTest")._groups["0"]["0"].clientWidth)
 
-		// add rectangles
-		graph_svg.selectAll("rect")
-			.data(frequencyArray)
-			.enter()
-			.append("rect")
-			.attr("y", function(d, i) {
-					return i * w / bars - padding;
-			})
-			.attr("x", function(d) {
-				return - d;
-			})
-			.attr("height", barWidth)
-			.attr("width", function(d) {
-				return h - d;
-			})
-			.attr("fill", "blue" );
-	};
+	// initialize properties
+	var w = d3.select("#barchartSpot")._groups["0"]["0"].clientHeight;
+	var h = d3.select("#barchartSpot")._groups["0"]["0"].clientWidth;
+	var bars = frequencyArray.length;
+	// console.log(w);
+	var padding = 0.2;
+	var barWidth = h / bars;
+	
+	// append svg element
+	var svg_div = d3.select("#barchartSpot")
+				.append("svg")
+				.attr("id", "graph-svg")
+				.attr("width", h)
+				.attr("height", w - 30);
+
+	// console.log(h)
+	var x = d3.scaleLinear()
+				.domain([0, 255])
+				.range([0, h]);
+
+	var y = d3.scaleLinear()
+				.domain(255)
+				.range([0, h])
+
+
+	svg_div.selectAll("rect")
+		.data(frequencyArray)
+		.enter()
+		.append("rect")
+		.attr("y", function(d, i) {
+				return i * (w / bars)
+		})
+		.attr("x", function(d) {
+			return - x(d)})
+		.attr("height", barWidth)
+		.attr("width", function(d) {
+			return h - x(d)
+		})
+		.attr("fill",  "yellow" );
+};
+
 };
