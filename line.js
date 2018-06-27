@@ -67,10 +67,10 @@ window.onload= function() {
         height = 270 - margin.top - margin.bottom;
 
         // Adds the svg canvas
-        var svgContainer = d3.select("body")
-                    .append("svg")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom);
+        // var svgContainer = d3.select("body")
+        //             .append("svg")
+        //             .attr("width", width + margin.left + margin.right)
+        //             .attr("height", height + margin.top + margin.bottom);
 
         // // makes sure that data is updated before overdrawing it
         // window.requestAnimationFrame(function() {
@@ -83,10 +83,20 @@ window.onload= function() {
         // copy frequency data into array
         analyserNode.getByteTimeDomainData(wavelengthArray);
 
+        var svg_div = d3.select('.linegraph')
+                        .append('svg')
+                        .attr("id", "line-graph")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom);
+
+        line_graph = d3.select("#line-graph");
+
+        wavelengthArray = [239, 248, 212, 192, 94, 123, 59];
+        console.log(wavelengthArray);
 
         // Set the ranges
         var x = d3.scaleLinear()
-                    .domain([0,254])
+                    .domain([0,255])
                     .range([0, width]);
 
         var y = d3.scaleLinear()
@@ -95,22 +105,24 @@ window.onload= function() {
 
 
         // Define the line
-        var valueline = d3.line()
+        var line = d3.line()
                             .x(function(d, i) { 
-                                console.log("hallo:", d, i);
+                                console.log(d, i);
                                 return x(i); })
                             .y(function(d) { return y(d); });
 
         
         // Scale the range of the data
         x.domain(d3.extent(wavelengthArray, function(d) { return d; }));
-        y.domain([0, d3.max(wavelengthArray, function(d) { return d; })]);
+        y.domain(d3.extent(wavelengthArray, function(d) { return d; }));
 
         // Add the valueline path.
-        var linegraph =  svgContainer.append("path")
-                                    .attr("d", valueline)
-                                    .attr("class", "line")
-                                    
+        line_graph.append("path")
+                        .data(wavelengthArray)
+                        .attr("class", "line")
+                        .attr("id", "line-graph")
+                        .attr("d", line)
+                        // .style("stroke-width", "#ccc");
 
 
     };

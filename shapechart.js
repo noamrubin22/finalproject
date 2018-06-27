@@ -1,3 +1,4 @@
+
 ////////////////////////////////////////////////////////
 // Minor Programmeren Finalproject Musicvisualization // 
 //                                                    //
