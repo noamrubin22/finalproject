@@ -61,4 +61,4 @@ due to illness I couldn't work on the project
 *	scale fixed and bootstrap installed
 
 ## **wed 27 june**
-*	lay-out day, cleaned code
+*	lay-out day, cleaned code, might implement a line graph.. not sure if i will have enough time. problems the tidyness of my github.. :( 

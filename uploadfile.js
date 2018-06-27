@@ -3,9 +3,11 @@
 //                                                    //
 // Name:  Noam Rubin       	                          //
 // Studentnumber: 10800565							  //
-// 													  // 
+// 													  //
+// 27 - 06 - 2018                                	  // 
+//		    									      // 												
 // This script lets the user load a mp3 file and 	  //
-// updates the visualization                          //                                         //
+// updates the visualization                          //                                         
 //                                                    //
 ////////////////////////////////////////////////////////
 
@@ -41,7 +43,7 @@ function uploadFile() {
 			frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 			analyserNode.getByteFrequencyData(frequencyArray);
 			// console.log(frequencyArray);
-			
+
 			// create frequency barchart
 			createBarChart(analyserNode)
 

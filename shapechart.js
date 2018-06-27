@@ -17,8 +17,8 @@ function createCircleChart(analyserNode) {
     // initialize properties
     svg1Height = 400,
     svg1Width = 400;
-    svg2Height = 500,
-    svg2Width = 500;
+    svg2Height = 600,
+    svg2Width = 600;
 
     // append svg to div first svg
     var svgShaper = d3.select('.svgShaper')

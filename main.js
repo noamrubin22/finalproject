@@ -1,3 +1,16 @@
+////////////////////////////////////////////////////////
+// Minor Programmeren Finalproject Musicvisualization // 
+//                                                    //
+// Name:  Noam Rubin       	                          //
+// Studentnumber: 10800565							  //
+// 													  //
+// 27 - 06 - 2018                                	  // 
+//		    									      // 											  
+// This is the main script for the 					  //
+// music visualization							 	  //
+//                       							  //
+////////////////////////////////////////////////////////
+
 window.onload = function() {
 
 	// call uploadFile function
@@ -10,10 +23,7 @@ window.onload = function() {
 	context = properties[0]
 	source = properties[1]
 	analyserNode = properties[2];
-	console.log("1", analyserNode);
-	frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
-	analyserNode.getByteFrequencyData(frequencyArray);
-	console.log(frequencyArray);
+
 	// create frequency barchart
 	createBarChart(analyserNode)
 

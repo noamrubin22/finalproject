@@ -3,9 +3,11 @@
 //                                                    //
 // Name:  Noam Rubin       	                          //
 // Studentnumber: 10800565							  //
-// 													  // 
+// 													  //
+// 27 - 06 - 2018                                	  // 
+//		    									      // 											 
 // This script creates a barchart that updates with   //
-// live data using the frequency of a song. The       //                                         //
+// live data using the frequency of a song. The       //                                         
 // analyserNode obtaints all necessary information	  //                                           
 //   												  //
 ////////////////////////////////////////////////////////
@@ -37,11 +39,6 @@ function createBarChart(anaylserNode) {
 	var bars = frequencyArray.length;
 	var barWidth = h / bars;
 
-	// // create color scale
- //    var hueScale2 = d3.scaleLinear()
-	// 				    .domain([0, d3.max(frequencyArray)])
-	// 				    .range([400, 450]);
-
 	// append svg element
 	var svg_div = d3.select("#barchartSpot")
 				.append("svg")
@@ -68,5 +65,5 @@ function createBarChart(anaylserNode) {
 		.attr("width", function(d) {
 			return x(d)
 		})
-		.style("stroke", "#660099");
+		.style("stroke", "#7F00FF");
 };

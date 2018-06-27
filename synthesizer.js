@@ -1,16 +1,16 @@
-////////////////////////////////////////////////////////
-// Minor Programmeren Finalproject Musicvisualization // 
-//                                                    //
-// Name:  Noam Rubin                                  //
-// Studentnumber: 10800565                            //
-//                                                    //
-// 27 - 06 - 2018                                     // 
-//                                                    // 
-// This script creates a circle chart that updates    //
-// with live data using the wavelength of a song. The //                                         //
-// analyserNode provides the necessary information    //                                           
-//                                                    //
-////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+// Minor Programmeren Finalproject Music visualization  // 
+//                                                      //
+// Name:  Noam Rubin                                    //
+// Studentnumber: 10800565                              //
+//                                                      //
+// 27 - 06 - 2018                                       // 
+//                                                      // 
+// This script creates a circle chart that updates      //
+// with live data using the wavelength of a song. The   //                                         //
+// analyserNode provides the necessary information      //                                           
+//                                                      //
+//////////////////////////////////////////////////////////
 
 var globalFilterValue;
 
