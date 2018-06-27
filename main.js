@@ -3,12 +3,10 @@ window.onload = function() {
 	// call uploadFile function
 	uploadFile()
 
-	var tim = playAudio();
-	context = tim[0]
-	source = tim[1]
-	analyserNode = tim[2]
-	// context, audio, analyserNode = playAudio()
-	console.log(context, source, analyserNode)
+	var properties = playAudio();
+	context = properties[0]
+	source = properties[1]
+	analyserNode = properties[2];
 
 	createBarChart(analyserNode)
 

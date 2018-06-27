@@ -1,8 +1,11 @@
 ////////////////////////////////////////////////////////
-// Heuristieken: Finalproject Musicvisualization      //
+// Minor Programmeren Finalproject Musicvisualization // 
 //                                                    //
 // Name:  Noam Rubin       	                          //
-//                                                    //                                         //
+// Studentnumber: 10800565							  //
+// 													  // 
+// This script lets the user load a mp3 file and 	  //
+// updates the visualization                          //                                         //
 //                                                    //
 ////////////////////////////////////////////////////////
 
@@ -27,12 +30,15 @@ function uploadFile() {
 			// show filename
 			customText.innerHTML = document.getElementById("real-file").files[0].name
 
-			// call updatebarchart function
+			// update chart with new data
 			updateChart(customText.innerHTML);
-		
+
+		} 
 		// if file is not chosen yet
-		} else {
-			customText.innerHTML = "No file chosen, yet."
+		else {
+
+			// show 
+			customText.innerHTML = "File not chosen"
 		};
 	})
 };
@@ -52,10 +58,9 @@ function updateChart(newsong) {
 		audio.controls = true;
 		audio.loop = true; 
 		audio.autoplay = false;
-		// console.log("hoi")
 
+	// when audio context changes
 	audio.onchange = function(){
-	// """ Being executed when audio context changes """
 
 		// create files in this 
 		var files = this.files;
@@ -70,7 +75,7 @@ function updateChart(newsong) {
 	audio_player.play();
 	};
 
-	// replace audio element to the audio box on the page
+	// replace audio element in the audio box on the page
     var audioElement = document.getElementById("audio-box")
     audioElement.replaceChild(audio, audioElement.childNodes[0]);
 	
@@ -86,72 +91,66 @@ function updateChart(newsong) {
         // connect audio context analyser
         source.connect(analyserNode);
         
-        // connect visualizationdata to destination
+        // connect visualizationdata to speakers
         analyserNode.connect(context.destination);
 	
+	// send visualizationdata to the synthesizer
 	analyserNode = synthesizer(context, source)
 
-	createBarChart(analyserNode)
+	// and the barchart
+	createBarChart(analyserNode);
 
 
-function createBarChart(anaylserNode) {
-	// """ Creates a dynamic barchart """
+	function createBarChart(anaylserNode) {
+		// """ Creates a dynamic barchart """
 
-	// makes sure that data is updated before overdrawing it
-	window.requestAnimationFrame(function() {
-		createBarChart(analyserNode)
-	});
+		// makes sure that data is updated before overdrawing it
+		window.requestAnimationFrame(function() {
+			createBarChart(analyserNode)
+		});
 
-	// substract frequencies
-	frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
+		// substract frequencies
+		frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 
-	// copy frequency data into array
-    analyserNode.getByteFrequencyData(frequencyArray);
+		// copy frequency data into array
+	    analyserNode.getByteFrequencyData(frequencyArray);
 
-    // clear svg
-    d3.select("#graph-svg").remove();
+	    // clear svg
+	    d3.select("#graph-svg").remove();
 
-    // console.log(d3.select("#timTest")._groups["0"]["0"].clientWidth)
+		// initialize properties
+		var w = d3.select("#barchartSpot")._groups["0"]["0"].clientHeight;
+		var h = d3.select("#barchartSpot")._groups["0"]["0"].clientWidth;
+		frequencyArray = frequencyArray.filter(function(d) { return d > 0});
+		var bars = frequencyArray.length;
+		var barWidth = h / bars;
 
-	// initialize properties
-	var w = d3.select("#barchartSpot")._groups["0"]["0"].clientHeight;
-	var h = d3.select("#barchartSpot")._groups["0"]["0"].clientWidth;
-	var bars = frequencyArray.length;
-	// console.log(w);
-	var padding = 0.2;
-	var barWidth = h / bars;
-	
-	// append svg element
-	var svg_div = d3.select("#barchartSpot")
-				.append("svg")
-				.attr("id", "graph-svg")
-				.attr("width", h)
-				.attr("height", w - 30);
+		// append svg element
+		var svg_div = d3.select("#barchartSpot")
+					.append("svg")
+					.attr("id", "graph-svg")
+					.attr("width", h)
+					.attr("height", w );
 
-	// console.log(h)
-	var x = d3.scaleLinear()
-				.domain([0, 255])
-				.range([0, h]);
+		// create x scale
+		var x = d3.scaleLinear()
+					.domain([0, 255])
+					.range([217, 0]);
 
-	var y = d3.scaleLinear()
-				.domain(255)
-				.range([0, h])
-
-
-	svg_div.selectAll("rect")
-		.data(frequencyArray)
-		.enter()
-		.append("rect")
-		.attr("y", function(d, i) {
-				return i * (w / bars)
-		})
-		.attr("x", function(d) {
-			return - x(d)})
-		.attr("height", barWidth)
-		.attr("width", function(d) {
-			return h - x(d)
-		})
-		.attr("fill",  "yellow" );
-};
-
+		// append rectangles
+		svg_div.selectAll("rect")
+			.data(frequencyArray)
+			.enter()
+			.append("rect")
+			.attr("y", function(d, i) {
+					return i * (w / bars)
+			})
+			.attr("x", function(d) {
+					return 0})
+			.attr("height", barWidth)
+			.attr("width", function(d) {
+				return x(d)
+			})
+			.attr("fill",  "yellow" );
+	};
 };

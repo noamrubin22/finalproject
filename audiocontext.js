@@ -5,7 +5,7 @@ function playAudio() {
       
 		// make sure CODS are set to None 
 		audio.crossOrigin = 'anonymous';
-		console.log("hey");
+
 		// use uploaded song
 		audio.src = "raga.mp3";
 	
@@ -13,7 +13,6 @@ function playAudio() {
 		audio.controls = true;
 		audio.loop = true; 
 		audio.autoplay = false;
-		// console.log("hoi")
 
 	audio.onchange = function(){
 
@@ -30,7 +29,6 @@ function playAudio() {
 	audio_player.play();
 	};
 
-	// console.log("hay");
 	// add created audio element to the audio box on the page
    	document.getElementById("audio-box").appendChild(audio);
 	

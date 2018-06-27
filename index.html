@@ -5,7 +5,7 @@
 		
 		<!-- Required meta tags -->
 	    <meta charset="utf-8">
-	    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -40,21 +40,24 @@
 
 			<!-- synthesizer -->
 			<div class="synthesizer">
-						<label for="distortion">Distortion: </label>
+						<label for="distortion" class= "sliderlabel">Distortion</label>
 						<input type="range" min="0.0" max="1.0" step="0.01"
-						        value="0.0" id= "distortion">
-						<label for="lowpassfilter"> Bass Booster: </label>
+						        value="0.0" id= "distortion" class="slider">
+						<label for="lowpassfilter" class= "sliderlabel"> Bass Booster</label>
 						<input type="range" min="0.0" max="1.0" step="0.01"
-				        		value="0.0" id= "lowpassfilter">
+				        		value="0.0" id= "lowpassfilter" class="slider">
 	
-						<label for="filter">High pass filter: </label>       
+						<label for="filter" class= "sliderlabel">High pass filter </label>       
 				        <input type="range" min="0.0" max="1.0" step="0.01"
-				        		value="0.0" id= "filter">
+				        		value="0.0" id= "filter" class="slider">
+						<button id="button" class="button">Reset</button>
 						
-						<button id="button">Reset</button>
 			</div>
 	
-			<div class="box 6"></div>
+			<div class="box 6">
+				<p>#allestahina </p>
+				
+			</div>
 			
 		</div>
 			

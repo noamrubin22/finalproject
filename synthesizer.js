@@ -1,19 +1,27 @@
+////////////////////////////////////////////////////////
+// Minor Programmeren Finalproject Musicvisualization // 
+//                                                    //
+// Name:  Noam Rubin                                  //
+// Studentnumber: 10800565                            //
+//                                                    //
+// 27 - 06 - 2018                                     // 
+//                                                    // 
+// This script creates a circle chart that updates    //
+// with live data using the wavelength of a song. The //                                         //
+// analyserNode provides the necessary information    //                                           
+//                                                    //
+////////////////////////////////////////////////////////
+
 var globalFilterValue;
 
 function synthesizer(context, source) {
 
-		// var selectedVolume = document.getElementById("volume");
+		// get elements from html
 		var selectedDistortion = document.getElementById("distortion");
 		var selectedFilter = document.getElementById("filter");
 		var selectedBassBooster = document.getElementById("lowpassfilter")
-
-		// console.log("volume", selectedVolume.value);
-		// console.log("distortion", selectedDistortion.value);
-		// console.log("filter", selectedFilter.value);
-		// console.log("bass:", selectedBassBooster);
 		
-		// create audio source
-		// var oscillator = context.createOscillator();
+		// create audio context elements
 		var analyserNode = context.createAnalyser();
 		var distortion = context.createWaveShaper();
 		var gainNode = context.createGain();
@@ -26,50 +34,45 @@ function synthesizer(context, source) {
 		gainNode.connect(analyserNode);
 		analyserNode.connect(context.destination);
 
-		// slider values
+		// initialize slider values variables
 		var changedDistortion = selectedDistortion.value;
-		// var changedVolume = selectedVolume.value;
 		var changedFilter = selectedFilter.value;
 		var changedBass = selectedBassBooster.value;
-		// console.log("dist:", changedDistortion);
-		// console.log("vol:", changedVolume);
-		// console.log("filter:", changedFilter);
-		// console.log("bass:", changedBass);
 
-		// reset button
+		// and a reset button variable
 		var resetButton = document.getElementById("button");
 
-
-	// when volume value changes
+	// when filter value changes
 	function filterChange() {
+		// filters the low frequencies 
 
-		// use lowshelf filter
+		// let only the high frequencies pass
 		biquadFilter.type = "highpass";
 
-		// calculate new filter value
+		// calculate new filter value and multiply it
 		var newFilterValue = selectedFilter.value * 10000;
-		// console.log("newfilter:", newFilterValue)
 
+		// change global filter value
 		globalFilterValue = newFilterValue;
 
-	    // only let frequencies above 1000 get through
+	    // only let frequencies above new filtervalue get through
 	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
 
 	    // if frequency is lower than above, add 30 
 	    biquadFilter.gain.setTargetAtTime(30, context.currentTime, 0);	
 };
 
-	// when volume value changes
+	// when bass booster value changes
 	function bassChange() {
+		// increases the low frequency sounds 
 
-		// use highshelf filter
+		// use a lowshelf filter
 		biquadFilter.type = "lowshelf";
 
 		// calculate new filter value
 		var newFilterValue = selectedBassBooster.value * 100;
-		// console.log("newbass:", newFilterValue)
 
-	    // only let frequencies above 1000 get through
+	    // only let frequencies below new filter value get through
 	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
 
 	    // if frequency is lower than above, add 30 
@@ -77,18 +80,19 @@ function synthesizer(context, source) {
 
 	};
 
-	// when volume value changes
+	// when distortion value changes
 	function distortionChange() {
+		// adds a distortion to the sound
 
+		// calculate new distortion value
 		changedDistortion = selectedDistortion.value * 800;
 		
 		// use distortion curve to change sound
 	    distortion.curve = Distortion(changedDistortion);
-	    // console.log(changedDistortion)
     };
 
 
-    // when sliders are used song-properties change
+    // when sliders are used song-properties change and needs to be updated
     selectedFilter.onchange = function() {
     	filterChange(selectedFilter.value);
     }
@@ -102,30 +106,24 @@ function synthesizer(context, source) {
     }
 
 
-    // when clicked song-properties go back to default settings
+    // when reset button clicked 
 	resetButton.onclick = function() {
 
-		// console.log("hey reset ")
-
-		// console.log("1", selectedFilter.value)
-
+		// song-properties go back to default settings
 		selectedFilter.value = selectedFilter.defaultValue;
 		filterChange(selectedFilter.defaultValue);
 
-		// filterChange(selectedFilter.value)
-		// console.log("na", selectedFilter.value);
-		
-
 		selectedBassBooster.value = selectedBassBooster.defaultValue
 		bassChange(selectedBassBooster.defaultValue);
-		// console.log("bassdefault:", selectedFilter.defaultValue);
-
 
 		selectedDistortion.value = selectedDistortion.defaultValue
 		distortionChange(selectedDistortion.defaultValue)
 	};
+
+	// visualizations needs to receive new data from analyserNode
 	createBarChart(analyserNode)
 	createShapeChart(analyserNode)
+
 	return analyserNode;
 };
 

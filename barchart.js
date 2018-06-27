@@ -1,10 +1,23 @@
+////////////////////////////////////////////////////////
+// Minor Programmeren Finalproject Musicvisualization // 
+//                                                    //
+// Name:  Noam Rubin       	                          //
+// Studentnumber: 10800565							  //
+// 													  // 
+// This script creates a barchart that updates with   //
+// live data using the frequency of a song. The       //                                         //
+// analyserNode obtaints all necessary information	  //                                           
+//   												  //
+////////////////////////////////////////////////////////
+
+
 function createBarChart(anaylserNode) {
 	// """ Creates a dynamic barchart """
 
 	// // makes sure that data is updated before overdrawing it
-	// window.requestAnimationFrame(function() {
-	// 	createBarChart(analyserNode)
-	// });
+	window.requestAnimationFrame(function() {
+		createBarChart(analyserNode)
+	});
 
 	// substract frequencies
 	frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
@@ -15,15 +28,13 @@ function createBarChart(anaylserNode) {
     // clear svg
     d3.select("#graph-svg").remove();
 
-    // console.log(d3.select("#timTest")._groups["0"]["0"].clientWidth)
-
 	// initialize properties
 	var w = d3.select("#barchartSpot")._groups["0"]["0"].clientHeight;
-	// var w = 150;
 	var h = d3.select("#barchartSpot")._groups["0"]["0"].clientWidth;
+
+	// filter zero values in frequencyarray
 	frequencyArray = frequencyArray.filter(function(d) { return d > 0});
 	var bars = frequencyArray.length;
-	var padding = 0.2;
 	var barWidth = h / bars;
 	
 	// append svg element
@@ -33,19 +44,12 @@ function createBarChart(anaylserNode) {
 				.attr("width", h)
 				.attr("height", w );
 
-
+	// create x scale
 	var x = d3.scaleLinear()
 				.domain([0, 255])
 				.range([217, 0]);
 
-	// var y = d3.scaleLinear()
-	// 			.domain(255)
-	// 			.range([0, h])
-
-	// console.log(frequencyArray);
-
-
-
+	// append rectangles 
 	svg_div.selectAll("rect")
 		.data(frequencyArray)
 		.enter()
@@ -57,7 +61,6 @@ function createBarChart(anaylserNode) {
 			return 0})
 		.attr("height", barWidth)
 		.attr("width", function(d) {
-			// console.log(h- x(d));
 			return x(d)
 		})
 		.attr("fill",  "yellow" );

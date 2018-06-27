@@ -1,6 +1,22 @@
+/*////////////////////////////////////////////////////////
+// Minor Programmeren Finalproject Musicvisualization 	// 
+//                                                    	//
+// Name:  Noam Rubin                                  	//
+// Studentnumber: 10800565                            	//
+//                                                    	//
+// 27 - 06 - 2018                                     	// 
+//                                                   	// 
+// This script is responsible for the styling of     	//
+// the music visualization. For a better positioning,	//                                         //
+// CSS grid is used.									//                                           
+//                                                    	//
+////////////////////////////////////////////////////////*/
+
+
+/*set html and body to 100%*/
 html, body {height: 100%;}
 
-
+/*wrapper properties*/
 .wrapper{
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 3fr;
@@ -13,26 +29,31 @@ html, body {height: 100%;}
 	height: 100%;
 }
 
+/*background color*/
 .wrapper >div {
 	background: #eee;
 	padding: 1em;
 }
 
+/*first box with info*/
 .informationbox {
 	grid-column: 1/3; 
 	grid-row: 1/2;
 }
 
+/*frequency barchart*/
 .svg-barchart {
 	grid-column: 1/2;
 	grid-row: 2/6;
 }
 
+/*mp3 player*/
 #audio-box {
 	grid-column: 2/3;
 	grid-row: 2;
 }
 
+/*circle visualization*/
 .svgShaper {
 	grid-column: 3/5;
 	grid-row: 1/6;
@@ -43,22 +64,6 @@ html, body {height: 100%;}
 .svg { 
 	width: 100%;
  	height: 100%;
- }
-
-.uploadfile {
-	grid-column: 2/3;
-	grid-row: 3/4;
-	align-items: center;
-}
-
-.synthesizer {
-	grid-column: 2/3;
-	grid-row: 4;
-}
-
-.box6 {
-	grid-column: 6;
-	grid-row: 5/6;
 }
 
 #shape-svg {
@@ -72,18 +77,16 @@ html, body {height: 100%;}
 	margin-top: 150px;
 }
 
-#shape-svg3 {
-	position: absolute;
-	margin-left: 290px;
+
+
+/*uploadfile button*/
+.uploadfile {
+	display:grid;
+	grid-column: 2/3;
+	grid-row: 3/4;
+	align-items: center;
 }
 
-#shape-svg4 {
-	position: absolute;
-	margin-left: 100px;
-	margin-top: 220px;
-}
-
- /*upload file */
 #custom-button {
 		padding: 10px;
 		color: white;
@@ -106,19 +109,72 @@ html, body {height: 100%;}
 }
 
 
+/*synthesizer*/
+.synthesizer {
+	grid-column: 2/3;
+	grid-row: 4;
+	box-shadow: 10px 10px 5px grey;
+}
+
+/*sliders*/
+.sliderlabel {
+	display: grid;
+	place-items: start center;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: grey;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background:  #af8dc3;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+/*extra box*/
+.box6 {
+	grid-column: 6;
+	grid-row: 5/6;
+}
+
+
 /*resetbutton*/
 .button {
-    position: relative;
+    position: absolute;
+    /*margin-right: 20px; */
     background-color: #af8dc3;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
     color: #f7f7f7;
     padding: 5px;
-    width: 50px;
-    margin-left: 20px;
-    margin-top: 30px;
+    width: 80px;
+    margin-left: 110px;
+    margin-top: 20px;
     text-align: center;
-    -webkit-transition-duration: 0.4s; 
+    -webkit-transition-duration: 0.2s; 
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
@@ -135,7 +191,7 @@ html, body {height: 100%;}
     margin-left: -20px!important;
     margin-top: -120%;
     opacity: 0;
-    transition: all 0.8s
+    transition: all 0.6s
 }
 
 .button:active:after {
@@ -144,4 +200,3 @@ html, body {height: 100%;}
     opacity: 1;
     transition: 0s
 }
-?
