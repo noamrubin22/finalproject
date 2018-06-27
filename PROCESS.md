@@ -56,3 +56,9 @@ due to illness I couldn't work on the project
 
 ## **mon 25 june** 
 *	read into css grid and gridded my page. frequency barchart keeps causing me problems by not scaling well. 
+
+## **tue 26 june**
+*	scale fixed and bootstrap installed
+
+## **wed 27 june**
+*	lay-out day, cleaned code

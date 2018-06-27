@@ -4,7 +4,7 @@
 // Name:  Noam Rubin                                  //
 // Studentnumber: 10800565                            //
 //                                                    //
-// 27 - 06 - 2018                                    // 
+// 27 - 06 - 2018                                     // 
 //                                                    // 
 // This script creates a circle chart that updates    //
 // with live data using the wavelength of a song. The //                                         //
@@ -36,8 +36,8 @@ function createCircleChart(analyserNode) {
 
                    
     // select id
-    var shape_svg = d3.select("#shape-svg")
-    var shape_svg2 = d3.select("#shape-svg2")
+    shape_svg = d3.select("#shape-svg")
+    shape_svg2 = d3.select("#shape-svg2")
 
     // call create shapechart function
     shapeVisualization(analyserNode)
@@ -62,17 +62,17 @@ function shapeVisualization(analyserNode) {
     // scale for radius
     var radiusScale = d3.scaleLinear()
         .domain([0, d3.max(waveLengthArray)])
-        .range([0, svgHeight]);
+        .range([0, svg2Height]);
 
     // first colorscale
     var hueScale1 = d3.scaleLinear()
         .domain([0, d3.max(waveLengthArray)])
-        .range([0, 250]);
+        .range([0, 300]);
 
     // second colorscale
     var hueScale2 = d3.scaleLinear()
         .domain([0, d3.max(waveLengthArray)])
-        .range([0, 360]);
+        .range([300, 400]);
 
    // update first cirlce chart with data
    var circles = shape_svg.selectAll("circle")
@@ -80,12 +80,12 @@ function shapeVisualization(analyserNode) {
                     .enter()
                     .append("circle")
                     .attr("r", function(d) { return d;})
-                    .attr("cx", svgWidth /1.1)
-                    .attr("cy", svgHeight / 8.9)
+                    .attr("cx", svg1Width /1.1)
+                    .attr("cy", svg1Height / 8.9)
                     .attr("fill", "none")
                     .attr("stroke-width", 1)
                     .attr("stroke-opacity", 0.2)
-                    .attr("stroke", function(d) { return d3.hsl(hueScale1(d), 1, 0.5)});
+                    .attr("stroke", function(d) { return d3.hsl(hueScale1(d), 1, 1.2)});
 
 
    // update second circle chart with  data
@@ -94,12 +94,12 @@ function shapeVisualization(analyserNode) {
                     .enter()
                     .append("circle")
                     .attr("r", function(d) { return radiusScale(d);})
-                    .attr("cx", svgWidth)
-                    .attr("cy", svgHeight)
+                    .attr("cx", svg2Width)
+                    .attr("cy", svg2Height)
                     .attr("fill", "none")
                     .attr("stroke-width", 1)
                     .attr("stroke-opacity", 0.2)
-                    .attr("stroke", function(d) { return d3.hsl(hueScale2(d), 1, 0.5)});
+                    .attr("stroke", function(d) { return d3.hsl(hueScale2(d), 2, 0.5)});
 };
 
 

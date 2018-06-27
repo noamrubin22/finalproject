@@ -12,7 +12,7 @@
 
 
 function createBarChart(anaylserNode) {
-	// """ Creates a dynamic barchart """
+	/* Creates a dynamic barchart */
 
 	// // makes sure that data is updated before overdrawing it
 	window.requestAnimationFrame(function() {
@@ -36,7 +36,12 @@ function createBarChart(anaylserNode) {
 	frequencyArray = frequencyArray.filter(function(d) { return d > 0});
 	var bars = frequencyArray.length;
 	var barWidth = h / bars;
-	
+
+	// // create color scale
+ //    var hueScale2 = d3.scaleLinear()
+	// 				    .domain([0, d3.max(frequencyArray)])
+	// 				    .range([400, 450]);
+
 	// append svg element
 	var svg_div = d3.select("#barchartSpot")
 				.append("svg")
@@ -63,5 +68,5 @@ function createBarChart(anaylserNode) {
 		.attr("width", function(d) {
 			return x(d)
 		})
-		.attr("fill",  "yellow" );
+		.style("stroke", "#660099");
 };
