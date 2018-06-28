@@ -1,6 +1,9 @@
 # Music visualization 
 ## Final project Noam Rubin 10800565
 D3 visualization using music as data.
+[my site](https://noamrubin22.github.io/finalproject/)
+
+
 
 ## Problem statement
 This visualization will be an addition for music lovers that either don’t have the knowledge of how to use a synthesizer or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. Complementing knowledge about how songs are being constructed would help the process of creating a new song.

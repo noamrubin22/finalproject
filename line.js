@@ -59,7 +59,13 @@ window.onload= function() {
 
         // console.log("hoi")
         // clear svg    
-        // d3.select("#path").remove();
+        d3.select("#path").remove();
+
+        // update circlechart constantly
+        window.requestAnimationFrame(function() {
+            shapeVisualization(analyserNode)
+        });
+
 
         // Set the dimensions of the canvas / graph
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
@@ -91,12 +97,12 @@ window.onload= function() {
 
         line_graph = d3.select("#line-graph");
 
-        wavelengthArray = [239, 248, 212, 192, 94, 123, 59];
+        // wavelengthArray = [239, 248, 212, 192, 94, 123, 59];
         console.log(wavelengthArray);
 
         // Set the ranges
         var x = d3.scaleLinear()
-                    .domain([0,255])
+                    .domain([0,7])
                     .range([0, width]);
 
         var y = d3.scaleLinear()
@@ -107,22 +113,36 @@ window.onload= function() {
         // Define the line
         var line = d3.line()
                             .x(function(d, i) { 
-                                console.log(d, i);
+                                // console.log(d, i);
                                 return x(i); })
                             .y(function(d) { return y(d); });
 
         
         // Scale the range of the data
-        x.domain(d3.extent(wavelengthArray, function(d) { return d; }));
-        y.domain(d3.extent(wavelengthArray, function(d) { return d; }));
+        // x.domain(d3.extent(wavelengthArray, function(d) { return d; }));
+        // y.domain(d3.extent(wavelengthArray, function(d) { return d; }));
 
         // Add the valueline path.
-        line_graph.append("path")
-                        .data(wavelengthArray)
-                        .attr("class", "line")
-                        .attr("id", "line-graph")
-                        .attr("d", line)
-                        // .style("stroke-width", "#ccc");
+        // svg_div
+        //         .append("path")
+        //         .data(wavelengthArray)
+        //         .attr("class", "line")
+        //         // .attr("id", "line-graph")
+        //         .attr("d", line);
+                // .style("stroke-width", "#ccc");
+                svg_div.append("path")
+                        // .data(wavelengthArray)
+                        // .attr("class", "line")
+                        .attr("d", line(wavelengthArray));
+
+                // Add the X Axis
+          svg_div.append("g")
+              .attr("transform", "translate(0," + height + ")")
+              .call(d3.axisBottom(x));
+
+          // Add the Y Axis
+          svg_div.append("g")
+              .call(d3.axisLeft(y));
 
 
     };

@@ -94,11 +94,11 @@ p {
 }
 
 #shape-svg2 {
-	/*display: grid;*/
+	display: grid;
 	position: absolute;
 	margin-left: 400px;
-	margin-top: 250px;
-	/*align-items: end;*/
+	margin-top: 230px;
+	align-items: end;
 }
 
 
@@ -189,6 +189,18 @@ p {
 	grid-column: 6;
 	grid-row: 5/6;
 }
+
+#lifechanger {
+	display: grid;
+	/*color: #D8D8D8;*/
+	font-size: 3em;
+	color: transparent;
+	border-color: #0000ff;
+	font-weight: bold;
+	text-align:justify;
+	letter-spacing: 4px;
+}
+
 
 /*resetbutton*/
 .button {
