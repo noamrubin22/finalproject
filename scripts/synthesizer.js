@@ -15,6 +15,7 @@
 var globalFilterValue;
 
 function synthesizer(context, source) {
+	/* connects different audio nodes and */
 
 		// get elements from html
 		var selectedDistortion = document.getElementById("distortion");

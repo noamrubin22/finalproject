@@ -23,7 +23,6 @@ function uploadFile() {
 		realFileButton.click();
 	});
 
-
 	// if value realfilebutton changes
 	realFileButton.addEventListener("change", function() {
 

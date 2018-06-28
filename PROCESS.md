@@ -29,7 +29,7 @@ due to illness I couldn't work on the project
 *	created shape visualization 	
 *	circles added based on wavelength
 * 	I am considering making a shape-transition visualization because that might be 			cooler
-*	I am having problems with putting both visualization in my html: it's hard to make 		functions out of the audio element which leaves me with 2 audio elements.. so I 		have to work on that!
+*	I am having problems with putting both visualization in my html: it's hard to make functions out of the audio element which leaves me with 2 audio elements.. so I have to work on that!
 
 ## **thu 14 june**
 *	created the extra functions so both charts are linked to the same audio element
@@ -62,3 +62,6 @@ due to illness I couldn't work on the project
 
 ## **wed 27 june**
 *	lay-out day, cleaned code, might implement a line graph.. not sure if i will have enough time. problems the tidyness of my github.. :( 
+
+## **thu 28 june**
+*	last day! wrote the report, cleaned my github
