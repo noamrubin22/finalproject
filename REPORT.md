@@ -39,34 +39,35 @@ The **window.requestAnimationFame** function played an important role in updatin
 
 	This was definitely my first defeat. I was really fond of this 'stream music from soundcloud'-option. It would have made the website much more approachable for a lot of people I would guess. Unfortunately Soundcloud decided to stop giving API's since a few years. Other music sources didn't seem suitable and that is why I chose to implement the 'upload file' button. 
 
-*	**local mp3 files**
+*	**Local mp3 files**
 
 	Since I am using local mp3 files I needed to find a solution in order to use them on the web. By clicking on my html I would get an error. In the end I chose to download a Google Chrome Extention which creates a local host. You could also run a local host with python obviously.
 
-*	**two audio elements**
+*	**Two audio elements**
 
 	In the beginning I was creating an audio element and context everytime a new visualization was made, for example if a new song was uploaded. Therefore I created the playAudio function, which leaves me with one audio element that is updated every time the song changes. 
 	
-*	**synthesizer**
+*	**Synthesizer**
 
 	Like I was expecting, understanding the synthesizer was a challenge. In the beginning I didn't understand why the visualizations where not updating after modification of the song but afterwards I put the anaylserNode the end of the connected nodes which worked fantastic! 
 
-*	*reset button*
+*	**Reset button**
+
 	The reset button didn't work in the beginning because the startvalues where 0.5/1.0, which is obviously still causing a modification of the song while resetting. Ones I understood that I changed this startvalue to 0.0. 
 
-*	**css grid**
+*	**Css grid**
 	
 	This was new for me and in the beginning I had problems with centering the elements and creating a single screen. In the end I am really happy I learned it because I feel much more comfortable with CSS and HTML now. I also enjoy it much more. I guess it was great that I finally had some time to work on my lay-out. 
 
-*	**scale frequency barchart**
+*	**Scale frequency barchart**
 
 	It was a bit hard for me to scale the barchart because of all the confusion with the 'width' and the 'height'. The barchart is positionized on the right in an 90 degrees angle. Ones it was fixed it looked much better. I also decided to filter zero values because the array was consisting of quite a lot of them and the visualization became a bit ugly because of it.
 
-*	**callbacks**
+*	**Callbacks**
 
 	Because I was using recursive functions that are calling themselfs 60 times a second, my website was quite slow and everytime I wanted to adjust something or console.log it would just take a lot of time. This was a bit annoying. 
 
-*	**extra implementations**
+*	**Extra implementations**
 
 	Ofcourse, I knew from the start that I wouldn't be able to implement all my ideas in this project. There are still a few in my mind that I might continue with later. I started with a few but because I had a hard time deciding which one I wanted to do I lost time. Typical me, but it's ok!
 

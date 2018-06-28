@@ -35,14 +35,30 @@ This data visualization will approach this problem by giving the users the freed
   https://soundcloud.com/stream 
   
 * **External components**
-  You will need the include d3 v4 library. The Audio Web API is a build-in function in JavaScript (documentation: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). Bootstrap is also required in the html. And last but not least, the Google Chrome extension to create a local host. 
+  None! The only function that is needed (for now) is the Web Audio API, but this is a build-in function in JavaScript. The     documentation can be found here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 
-* **Acknowledgements** 
-  * Circle visualization: 
+* **Similar visualizations** 
+  * Frequency barchart: 
+      https://www.bignerdranch.com/blog/music-visualization-with-d3-js/  
+      https://www.html5rocks.com/en/tutorials/webaudio/intro/ 
+  
+  * Shape update visualization: 
+      https://preziotte.com/blog/partymode/ 
       http://bl.ocks.org/eesur/6ad4ee84c81b664353a7 
-
-  * Distortion function:
-      http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion
+ 
+  * Synthesizer: 
+      https://roadtolarissa.com/synth/ 
+      http://thesynth.herokuapp.com/#!/
       
+      lay-out sliders: https://www.w3schools.com/howto/howto_js_rangeslider.asp 
+      
+  * Soundcloud API: 
+      https://www.youtube.com/watch?v=8TuqjGxosrc 
+      
+* **Hardest parts** 
+  * Live data is being extracted all the time. The visualization should update itself constantly. 
+  * Linking the visualizations
+  * Transforming the shapes using the transition function in d3
+  * Understanding Web Audio API 
    
 

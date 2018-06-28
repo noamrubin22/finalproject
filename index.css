@@ -13,15 +13,12 @@
 ////////////////////////////////////////////////////////*/
 
 
-/*set html and body to 100%*/
 html, body {
 	height: 100%;
 	width: 100%
-	/*font-family: Arial Rounded MT Bold;*/
+
 	font-family: verdana;
 }
-
-
 
 /*wrapper properties*/
 .wrapper{
@@ -34,7 +31,7 @@ html, body {
 	align-items: stretch;
 	width: 100%;
 	height: 100%;
-	background-image: url("background.jpg");
+	background-image: url("doc/background.jpg");
 }
 
 /*background color*/

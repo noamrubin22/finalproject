@@ -62,7 +62,6 @@ function playAudio(song) {
     
     // connect visualizationdata to destination
     analyserNode.connect(context.destination);
-    // analyserNode = synthesizer(context, source)
 
 	return [context, source, analyserNode];
 }
