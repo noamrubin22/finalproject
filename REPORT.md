@@ -1,7 +1,7 @@
 # Music visualization
 This website visualizes music and gives the user the option to manipulate it. As the visualizations change based on these manipulations, this website can function as an learning environment for people that are interested in music.
 
-![](https://github.com/noamrubin22/finalproject/blob/master/doc/screenshot.jpg)
+![](https://github.com/noamrubin22/finalproject/blob/master/doc/screenshot.png)
 
 ## An overview
 Looking at my files you will find scripts for the 2 different charts, the synthesizer, a script that lets the user upload a file and one that is responsible for the audio. The barchart is driven by frequency and the two circlegraphs by the wavelength of a song.
