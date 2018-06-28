@@ -12,6 +12,8 @@
 // analyserNode provides the necessary information    //                                           
 //                                                    //
 ////////////////////////////////////////////////////////
+var svgShaper, svgShaper2 ,svg1Height, svg1Width, svg2Height,svg2Width;
+
 
 function createCircleChart(analyserNode) {
     /*creates svg environment and calls visualization function*/
@@ -23,24 +25,20 @@ function createCircleChart(analyserNode) {
     svg2Width = 600;
 
     // append svg to div first svg
-    var svgShaper = d3.select('.svgShaper')
+    svgShaper = d3.select('.svgShaper')
                 .append('svg')
                 .attr("id", "shape-svg")
                 .attr("height", svg1Height)
                 .attr("width", svg1Width);
 
     // append svg to div second svg
-    var svgShaper2 = d3.select('.svgShaper')
+    svgShaper2 = d3.select('.svgShaper')
                     .append('svg')
                     .attr("id", "shape-svg2")
                     .attr("height", svg2Height)
                     .attr("width", svg2Width);
 
                    
-    // select id
-    shape_svg = d3.select("#shape-svg")
-    shape_svg2 = d3.select("#shape-svg2")
-
     // call create shapechart function
     shapeVisualization(analyserNode)
 };     
@@ -78,13 +76,13 @@ function shapeVisualization(analyserNode) {
         .range([300, 400]);
 
    // update first cirlce chart with data
-   var circles = shape_svg.selectAll("circle")
+   var circles = svgShaper.selectAll("circle")
                     .data(waveLengthArray)
                     .enter()
                     .append("circle")
                     .attr("r", function(d) { return d;})
                     .attr("cx", svg1Width /1.1)
-                    .attr("cy", svg1Height / 8.9)
+                    .attr("cy", svg1Height / 7)
                     .attr("fill", "none")
                     .attr("stroke-width", 1)
                     .attr("stroke-opacity", 0.2)
@@ -92,7 +90,7 @@ function shapeVisualization(analyserNode) {
 
 
    // update second circle chart with  data
-    var circles = shape_svg2.selectAll("circle")
+    var circles = svgShaper2.selectAll("circle")
                     .data(waveLengthArray)
                     .enter()
                     .append("circle")

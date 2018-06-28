@@ -124,6 +124,7 @@ function synthesizer(context, source) {
 	// visualizations needs to receive new data from analyserNode
 	createBarChart(analyserNode)
 	shapeVisualization(analyserNode)
+	startLineContext(analyserNode)
 
 	return analyserNode;
 };

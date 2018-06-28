@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////
 // Minor Programmeren Finalproject Musicvisualization // 
-//                                                    //
+//                                              3      //
 // Name:  Noam Rubin       	                          //
 // Studentnumber: 10800565							  //
 // 													  //
@@ -14,22 +14,25 @@
 window.onload = function() {
 
 	// call uploadFile function
-	uploadFile()
+	uploadFile();
 
 	// play audio 
-	var properties = playAudio("raga.mp3");
+	var properties = playAudio("latewood.mp3");
 
 	// substract properties audio file
-	context = properties[0]
-	source = properties[1]
+	context = properties[0];
+	source = properties[1];
 	analyserNode = properties[2];
 
 	// create frequency barchart
-	createBarChart(analyserNode)
+	createBarChart(analyserNode);
 
 	// create circle chart
-	createCircleChart(analyserNode)
+	createCircleChart(analyserNode);
+
+	// create line graph
+	startLineContext(analyserNode);
 
 	// run synthesizer
-	synthesizer(context, source)
+	synthesizer(context, source);
 };

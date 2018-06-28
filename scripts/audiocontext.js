@@ -22,7 +22,7 @@ function playAudio(song) {
 
 
 		// use uploaded song
-		audio.src = "/audio/"  + song;
+		audio.src = "audio/"  + song;
 	
 		// let it play 
 		audio.controls = true;

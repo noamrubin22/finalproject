@@ -12,6 +12,7 @@
 ////////////////////////////////////////////////////////
 
 function uploadFile() {
+	/* lets user upload a file and updates charts*/
 
 	// substract variables from html
 	const realFileButton = document.getElementById("real-file");
@@ -34,14 +35,16 @@ function uploadFile() {
 
 			// update chart with new data
 			var properties = playAudio(customText.innerHTML)
+			
+
 			// substract properties audio file
 			context = properties[0]
 			source = properties[1]
 			analyserNode = properties[2];
-			// console.log("1", analyserNode);
+
+			// create frequencyArray and fill it
 			frequencyArray = new Uint8Array(analyserNode.frequencyBinCount);
 			analyserNode.getByteFrequencyData(frequencyArray);
-			// console.log(frequencyArray);
 
 			// create frequency barchart
 			createBarChart(analyserNode)
@@ -49,6 +52,9 @@ function uploadFile() {
 			// create circle chart
 			createCircleChart(analyserNode)
 
+			// create linegraph
+			startLineContext(analyserNode)
+			
 			// run synthesizer
 			synthesizer(context, source)
 

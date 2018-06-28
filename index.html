@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
 <html lang="en">
 	<head>
-		<link rel="stylesheet" type="text/css" href="index.css">
+
+		<link rel="stylesheet" type="text/css" href="style.css">
 
 		<!-- Required meta tags -->
 	    <meta charset="utf-8">
@@ -18,7 +19,7 @@
 		<title> Music visualization</title>
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/>">
+	    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/"> -->
 
 	</head>
 	<body>
@@ -32,9 +33,10 @@
 			<div id= "audio-box">
 				<!-- div class="image"></div> -->
 			</div>
-			<div class="svgShaper"></div>
+			<div class="svgShaper">
+			</div>
 
- 			<!-- upload file button -->
+			<!-- upload file button -->
 			<div class="uploadfile">
 				<input type="file" id="real-file" hidden="hidden" />
 				<button type="button" id="custom-button">UPLOAD YOUR MP3 FILE</button>
@@ -58,18 +60,20 @@
 			</div>
 	
 			<div class="box 6">
-				<div id="lifechanger">#allestahina </div>
-				
+				<div id="lifechanger">#allestahina </div>	
 			</div>
 			
 		</div>
+
 		
+
 		<!-- Javascript scripts -->
 		<script src="scripts/audiocontext.js"></script>
 		<script src="scripts/barchart.js"></script>
 		<script src="scripts/uploadfile.js"></script>
 		<script src="scripts/shapechart.js"></script>
 		<script src="scripts/synthesizer.js"></script>
+		<script src="line.js"></script>
 		<script src="main.js"></script>
 
 		<!-- For bootstrap -->
