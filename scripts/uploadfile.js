@@ -34,9 +34,8 @@ function uploadFile() {
 			customText.innerHTML = document.getElementById("real-file").files[0].name
 
 			// update chart with new data
-			var properties = playAudio(customText.innerHTML)
+			var properties = playAudio(customText.innerHTML);
 			
-
 			// substract properties audio file
 			context = properties[0]
 			source = properties[1]
@@ -47,23 +46,23 @@ function uploadFile() {
 			analyserNode.getByteFrequencyData(frequencyArray);
 
 			// create frequency barchart
-			createBarChart(analyserNode)
+			createBarChart(analyserNode);
 
 			// create circle chart
-			createCircleChart(analyserNode)
+			createCircleChart(analyserNode);
 
 			// create linegraph
-			startLineContext(analyserNode)
-			
+			startLineContext(analyserNode);
+
 			// run synthesizer
-			synthesizer(context, source)
+			synthesizer(context, source);
 
 		} 
 		// if file is not chosen yet
 		else {
 
 			// show 
-			customText.innerHTML = "File not chosen"
+			customText.innerHTML = "File not chosen";
 		};
 	})
 };

@@ -12,9 +12,8 @@
 //   												  //
 ////////////////////////////////////////////////////////
 
-
 function createBarChart(anaylserNode) {
-	/* Creates a dynamic barchart */
+	/* creates a dynamic barchart */
 
 	// // makes sure that data is updated before overdrawing it
 	window.requestAnimationFrame(function() {
@@ -65,5 +64,5 @@ function createBarChart(anaylserNode) {
 		.attr("width", function(d) {
 			return x(d)
 		})
-		.style("stroke", "#7F00FF");
+		.style("stroke", "#8000ff");
 };

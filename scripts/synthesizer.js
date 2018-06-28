@@ -15,12 +15,12 @@
 var globalFilterValue;
 
 function synthesizer(context, source) {
-	/* connects different audio nodes and */
+	/* gives possibilty to modify audio context and returns analyserNode*/
 
 		// get elements from html
 		var selectedDistortion = document.getElementById("distortion");
 		var selectedFilter = document.getElementById("filter");
-		var selectedBassBooster = document.getElementById("lowpassfilter")
+		var selectedBassBooster = document.getElementById("lowpassfilter");
 		
 		// create audio context elements
 		var analyserNode = context.createAnalyser();
@@ -45,7 +45,7 @@ function synthesizer(context, source) {
 
 	// when filter value changes
 	function filterChange() {
-		// filters the low frequencies 
+		/* filters the low frequencies */
 
 		// let only the high frequencies pass
 		biquadFilter.type = "highpass";
@@ -57,15 +57,14 @@ function synthesizer(context, source) {
 		globalFilterValue = newFilterValue;
 
 	    // only let frequencies above new filtervalue get through
-	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
+	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0);
 
 	    // if frequency is lower than above, add 30 
 	    biquadFilter.gain.setTargetAtTime(30, context.currentTime, 0);	
-};
+	};
 
-	// when bass booster value changes
 	function bassChange() {
-		// increases the low frequency sounds 
+		/* increases the low frequency sounds */
 
 		// use a lowshelf filter
 		biquadFilter.type = "lowshelf";
@@ -74,16 +73,15 @@ function synthesizer(context, source) {
 		var newFilterValue = selectedBassBooster.value * 100;
 
 	    // only let frequencies below new filter value get through
-	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0)
+	    biquadFilter.frequency.setTargetAtTime(newFilterValue, context.currentTime, 0);
 
 	    // if frequency is lower than above, add 30 
 	    biquadFilter.gain.setTargetAtTime(30, context.currentTime, 0);
 
 	};
 
-	// when distortion value changes
 	function distortionChange() {
-		// adds a distortion to the sound
+		/*adds a distortion to the sound*/
 
 		// calculate new distortion value
 		changedDistortion = selectedDistortion.value * 800;
@@ -106,8 +104,7 @@ function synthesizer(context, source) {
     	distortionChange(selectedDistortion.value);
     }
 
-
-    // when reset button clicked 
+    // when reset button is clicked 
 	resetButton.onclick = function() {
 
 		// song-properties go back to default settings
@@ -118,13 +115,13 @@ function synthesizer(context, source) {
 		bassChange(selectedBassBooster.defaultValue);
 
 		selectedDistortion.value = selectedDistortion.defaultValue
-		distortionChange(selectedDistortion.defaultValue)
+		distortionChange(selectedDistortion.defaultValue);
 	};
 
 	// visualizations needs to receive new data from analyserNode
-	createBarChart(analyserNode)
-	shapeVisualization(analyserNode)
-	startLineContext(analyserNode)
+	createBarChart(analyserNode);
+	shapeVisualization(analyserNode);
+	startLineContext(analyserNode);
 
 	return analyserNode;
 };
@@ -146,4 +143,3 @@ function Distortion(amount) {
 	}
 	return curve;
 };
-

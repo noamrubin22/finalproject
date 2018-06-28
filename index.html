@@ -1,25 +1,29 @@
 <!DOCTYPE html> 
 <html lang="en">
 	<head>
-
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style/index.css">
 
 		<!-- Required meta tags -->
 	    <meta charset="utf-8">
+	   	<title> Music visualization</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Javascript scripts -->
+		<script src="scripts/audiocontext.js"></script>
+		<script src="scripts/barchart.js"></script>
+		<script src="scripts/uploadfile.js"></script>
+		<script src="scripts/shapechart.js"></script>
+		<script src="scripts/synthesizer.js"></script>
+		<script src="scripts/line.js"></script>
+		<script src="main.js"></script>
 
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	    <!-- D3 -->
 	    <script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script>
 		<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-
-	</head>
-		<meta charset="UTF-8">
-		<title> Music visualization</title>
-		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/"> -->
 
 	</head>
 	<body>
@@ -31,50 +35,31 @@
 
 			<div class ="svg-barchart" id="barchartSpot"></div>
 			<div id= "audio-box">
-				<!-- div class="image"></div> -->
 			</div>
 			<div class="svgShaper">
 			</div>
-
-			<!-- upload file button -->
 			<div class="uploadfile">
 				<input type="file" id="real-file" hidden="hidden" />
 				<button type="button" id="custom-button">UPLOAD YOUR MP3 FILE</button>
 				<span id="custom-text">No file chosen yet</span>
 			</div>
-
-			<!-- synthesizer -->
 			<div class="synthesizer">
-						<label for="distortion" class= "sliderlabel">Distortion</label>
+						<label for="distortion" class= "sliderlabel">DISTORTION</label>
 						<input type="range" min="0.0" max="1.0" step="0.01"
 						        value="0.0" id= "distortion" class="slider">
-						<label for="lowpassfilter" class= "sliderlabel"> Bass Booster</label>
+						<label for="lowpassfilter" class= "sliderlabel"> BASS BOOSTER</label>
 						<input type="range" min="0.0" max="1.0" step="0.01"
 				        		value="0.0" id= "lowpassfilter" class="slider">
 	
-						<label for="filter" class= "sliderlabel">High pass filter </label>       
+						<label for="filter" class= "sliderlabel">HIGH PASS FILTER </label>       
 				        <input type="range" min="0.0" max="1.0" step="0.01"
 				        		value="0.0" id= "filter" class="slider">
 						<button id="button" class="button">RESET</button>
-						
 			</div>
-	
 			<div class="box 6">
-				<div id="lifechanger">#allestahina </div>	
+				<div id="lifechanger"><p>#allestahina<p> </div>	
 			</div>
-			
 		</div>
-
-		
-
-		<!-- Javascript scripts -->
-		<script src="scripts/audiocontext.js"></script>
-		<script src="scripts/barchart.js"></script>
-		<script src="scripts/uploadfile.js"></script>
-		<script src="scripts/shapechart.js"></script>
-		<script src="scripts/synthesizer.js"></script>
-		<script src="line.js"></script>
-		<script src="main.js"></script>
 
 		<!-- For bootstrap -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

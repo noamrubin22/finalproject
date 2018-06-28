@@ -13,13 +13,13 @@
 ////////////////////////////////////////////////////////
 
 function playAudio(song) {
+	/* returns audio-element, context and analyserNode */
 
 	// initialize audio element
 	var audio = new Audio(); 
       
 		// make sure CODS are set to None 
 		audio.crossOrigin = 'anonymous';
-
 
 		// use uploaded song
 		audio.src = "audio/"  + song;
@@ -29,7 +29,8 @@ function playAudio(song) {
 		audio.loop = true; 
 		audio.autoplay = false;
 
-	audio.onchange = function(){
+	// if audio changes
+	audio.onchange = function() {
 
 		// create files in this 
 		var files = this.files;
