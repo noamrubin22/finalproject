@@ -1,9 +1,7 @@
 # Music visualization 
 ## Final project Noam Rubin 10800565
 D3 visualization using music as data.
-[my site](https://noamrubin22.github.io/finalproject/)
-
-
+[CHECK IT OUT!](https://noamrubin22.github.io/finalproject/)
 
 ## Problem statement
 This visualization will be an addition for music lovers that either don’t have the knowledge of how to use a synthesizer or don’t have the money to buy one. Often when a great idea of manipulating a song comes by it’s impossible for them to implement it. Complementing knowledge about how songs are being constructed would help the process of creating a new song.
@@ -20,22 +18,16 @@ This data visualization will approach this problem by giving the users the freed
   1. **Frequency barchart**: this barchart will update itself based on the frequency of the song
   2. **Shape update visualization**: shapes will transform into others based on the wavelength of the song
   3. **Synthesizer**: this tool will provide the option to manipulate songs by changing the frequency or volume and adding a delay or a filter (low/high- pass)
+  4. **Linegraph**: this line graph is going to change based on the wavelength
 
  *Interactive features*
-  1. Change of data by addition soundcloud song 
-  2. Change 'visualization-theme' (change of color and shape)
-  3. See music manipulator in visualizations
+  1. Change of data by addition mp3 file
+  2. Change of sound properties by synthesizer
   
-***Optional implementations***
-  * Combine different songs by splitting and merging audio channels
-  * Adding beats to the songs
-  * Using microphone to add sounds 
-  * Possibility to save created songs
   
 ## Prerequisites
 * **Data sources**  
-  Data will be chosen by the user using soundcloud 
-  https://soundcloud.com/stream 
+  Data will be chosen by the user by uploading or chosen from the audio directory.
   
 * **External components**
   You will need the include d3 v4 library. The Audio Web API is a build-in function in JavaScript (documentation: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). Bootstrap is also required in the html. And last but not least, the Google Chrome extension to create a local host. 
@@ -46,6 +38,5 @@ This data visualization will approach this problem by giving the users the freed
 
   * Distortion function:
       http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion
-      
    
 

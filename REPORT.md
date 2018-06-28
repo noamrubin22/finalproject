@@ -1,7 +1,7 @@
 # Music visualization
 This website visualizes music and gives the user the option to manipulate it. As the visualizations change based on these manipulations, this website can function as an learning environment for people that are interested in music.
 
-// screenshot
+![](https://github.com/noamrubin22/finalproject/blob/master/doc/screenshot.jpg
 
 ## An overview
 Looking at my files you will find scripts for the 2 different charts, the synthesizer, a script that lets the user upload a file and one that is responsible for the audio. The barchart is driven by frequency and the two circlegraphs by the wavelength of a song.
@@ -11,16 +11,18 @@ Looking at my files you will find scripts for the 2 different charts, the synthe
 	* 	barchart.js
 	* 	shapechart.js
 	* 	uploadfile.js
+	*	line.js
 	*	synthesizer.js
 	*	index.html
-	*	style.css
+	*	index.css
+
 
 ## Thinks you need to know 
 The Web Audio API made it possible to substract those song-characteristics, as they were needed for the visualization. The Web Audio API works as follows: first, you need to create an audio context which is basically a set of different audio nodes, each with a different functionality. You connect all those nodes and make sure the last one is connected to the destination, the speakers. The first one, your source, consists out of your audio element. The analyserNode is the one that has the information that I needed for the visualization. Since I decided to add a synthesizer to my website, I also used other nodes that are capable of manipulating the sound. For example, a biquadFilter can filter frequencies above or below a given value. therefore I used that node to create the 'Bassbooster', a filter that only lets low frequency through, and the 'High frequency filter', that only passes high frequency sounds. For the distortion I worked with a formula from stackoverflow. It causes an alteration of the wavelength. As you can see in the synthesizer script, the analyserNode is the one that connects to the destination. In this way, an alteration from the synthesizer can be passed to the visualizations.
 I also implemented a reset button that brings back all values to their startvalue.
 
 ## Functionality
-The main.js file calls all necessary functions. Starting with **uploadFile**, a function that is located in uploadfile.js. This function lets the user upload their own mp3 file and calls the visualization. Ones a new song is uploaded, the **playAudio** function in audiocontext.js creates an audio element and context out of it and returns them with the analyserNode. Those properties are being used in further functions. **createBarChart** and **createCircleChart** both need the analyserNode in order to visualize in d3. The **getByteFrequencyData()** and **getByteTimeDomainData()** guarenteed that the frequency and wavelength data could be stored in an Uint8Array. The **createCircleChart** function appends svg's to divs and selects id's before it calls the **shapeVisualization(analyserNode)** function. This following function is creating the circle charts. The synthesizer uses the source and context properties. Besides that it connects new nodes to the audio context, it consists out of functions that will alter the properties of the song based on which value the user has chosen. The user choses a filter value by practicing a slider. The synthesizer returns information about the new properties of the song and calls boths visualizations so the charts can being updated.
+The main.js file calls all necessary functions. Starting with **uploadFile**, a function that is located in uploadfile.js. This function lets the user upload their own mp3 file and calls the visualization. Ones a new song is uploaded, the **playAudio** function in audiocontext.js creates an audio element and context out of it and returns them with the analyserNode. Those properties are being used in further functions. **createBarChart**, **createCircleChart** and **createLinegraph** all need the analyserNode in order to visualize in d3. The **getByteFrequencyData()** and **getByteTimeDomainData()** guarenteed that the frequency and wavelength data could be stored in an Uint8Array. The **createCircleChart** function appends svg's to divs and selects id's before it calls the **shapeVisualization(analyserNode)** function. This following function is creating the circle charts. The synthesizer uses the source and context properties. Besides that it connects new nodes to the audio context, it consists out of functions that will alter the properties of the song based on which value the user has chosen. The user choses a filter value by practicing a slider. The synthesizer returns information about the new properties of the song and calls boths visualizations so the charts can being updated.
 
 Since I am using music as data, the data changes over time. For this reason the charts need to be updated constantly. Recursive functions 
 made this possible.
@@ -74,7 +76,6 @@ The **window.requestAnimationFame** function played an important role in updatin
 		Here are a few of my ideas:
 			*	a metronome that can add a beat to the song, with the option to record something and use that sound. 
 			*	a playlist (I would really liked to make it a bit more personal!)
-			*	a linegraph without axes, just one that displays the wavelength
 			*	a 'save my song'- option
 			*	a split & merge tool 
 			*	extra filters in the synthesizer

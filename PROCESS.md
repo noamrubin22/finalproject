@@ -64,4 +64,4 @@ due to illness I couldn't work on the project
 *	lay-out day, cleaned code, might implement a line graph.. not sure if i will have enough time. problems the tidyness of my github.. :( 
 
 ## **thu 28 june**
-*	last day! wrote the report, cleaned my github
+*	last day! wrote the report, cleaned my github and code, added linegraph
