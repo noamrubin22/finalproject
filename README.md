@@ -1,6 +1,6 @@
 # Music visualization 
 ## Final project Noam Rubin 10800565
-For the final project of the course "Dataprocessing" for my Computer Science Minor (University of Amsterdam, Harvard University) we had to create a data visualization with D3. The task was to build a visualization that links 3 graphs. I took the decision to use music as my data. The use of recursive functions allowed me to update the graphs with live data.
+For the final project of the course "Dataprocessing" of my Computer Science Minor (University of Amsterdam, Harvard University) we had to create a data visualization with D3. We had to link at least 3 graphs. I decided to use music as my data. The use of recursive functions allowed me to update the graphs with live data.
 [Try it yourself!](https://noamrubin22.github.io/finalproject/)
 Video: [link to video](https://www.youtube.com/watch?v=dp6riqiaczA&feature=youtu.be)
 
